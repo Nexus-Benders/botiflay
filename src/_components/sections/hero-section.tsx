@@ -102,8 +102,9 @@ function MiddleSection() {
 
 function HeroFooter() {
   return (
-    <div className="flex flex-row gap-2 absolute bottom-14 left-0 ">
+    <div className="flex flex-row gap-2 absolute bottom-14 left-0 justify-between w-full">
       <Collaboration />
+      <Clutch />
     </div>
   );
 }
@@ -141,5 +142,19 @@ function Collaboration() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Clutch() {
+  return (
+    <div>
+      <Image
+        src={"/assets/Clutch.png"}
+        alt="Clutch"
+        width={300}
+        height={300}
+        className="max-h-[32px] w-full"
+      />
+    </div>
   );
 }
