@@ -100,7 +100,7 @@ function MiddleSection() {
 
 function HeroFooter() {
   return (
-    <div className="flex flex-row gap-2 absolute bottom-14 left-0 justify-between w-full">
+    <div className="flex flex-row gap-2 absolute bottom-20 left-0 justify-between w-full">
       <Collaboration />
       <Clutch />
     </div>
