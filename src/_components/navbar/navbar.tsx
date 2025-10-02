@@ -14,14 +14,16 @@ export default function Navbar() {
 
 const DesktopNavbar = () => {
   return (
-    <div className="flex flex-row justify-between items-center py-2">
-      <figure>
-        <Image src="/logo.png" alt="Botiflay logo" width={100} height={100} />
-      </figure>
+    <div className="flex flex-row justify-between items-center py-5">
+      <Link href={"/"}>
+        <figure>
+          <Image src="/logo.png" alt="Botiflay logo" width={100} height={100} />
+        </figure>
+      </Link>
       <div className="flex-1 flex justify-center items-center ">
         <ul className="flex flex-row gap-8  justify-between bg-[#15151514] w-fit px-8 py-4 rounded-full">
           {NAV_LINKS.map((link: { href: string; label: string }) => (
-            <li key={link.href} className="group">
+            <li key={link.label} className="group">
               <Link href={link.href} className="relative">
                 {link.label}
               </Link>
@@ -30,7 +32,9 @@ const DesktopNavbar = () => {
           ))}
         </ul>
       </div>
-      <button>Start Your Project</button>
+      <button className="bg-gradient-to-b  text-[16px] font-bold leading-[18px] from-0% from-[#0D0D0D] to-100%  to-[#002E23] hover:bg-gradient-to-t hover:from-100% hover:from-[#002E23] hover:to-0% hover:to-[#0D0D0D] duration-300 cursor-pointer text-white  py-3.5 px-8 rounded-full">
+        Start Your Project
+      </button>
     </div>
   );
 };
