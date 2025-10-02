@@ -1,5 +1,20 @@
 import Image from "next/image";
 
+const optData = [
+  {
+    id: 1,
+    label: "4-6 week Delivery",
+  },
+  {
+    id: 2,
+    label: "Transparent Pricing",
+  },
+  {
+    id: 3,
+    label: "100% Money-Back guarantee",
+  },
+];
+
 export default function HeroSection() {
   return (
     <div className="min-h-dvh flex justify-center items-center">
@@ -39,10 +54,29 @@ function MiddleSection() {
           </p>
         </div>
       </div>
-      <div>
+      <div className="flex flex-col gap-2 justify-center items-center">
         <h1 className="font-bold text-[65px] leading-[65px] uppercase text-center">
           CRAFTING PREMIUM DESIGNS & DEVELOPMENT
         </h1>
+        <div className="flex flex-row gap-5">
+          {optData.map((item) => (
+            <div
+              key={item.id}
+              className="flex flex-row gap-0 justify-start items-center"
+            >
+              <Image
+                src={"/assets/Tick.png"}
+                alt="tick"
+                width={100}
+                height={100}
+                className="size-5"
+              />
+              <p className="text-[16px] leading-[26px] font-[400] text-[#434343]">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
