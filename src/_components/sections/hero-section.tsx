@@ -32,7 +32,7 @@ export default function HeroSection() {
 
 function MiddleSection() {
   return (
-    <div className="w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16">
+    <div className="w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16 gap-2">
       <div className="border border-[#EDEDED] rounded-full min-w-[244px] flex flex-row gap-2 py-1.5 px-3.5">
         <figure>
           <Image
@@ -85,15 +85,13 @@ function MiddleSection() {
           ))}
         </div>
       </div>
-      <div className="mt-12">
+      <div className="mt-8">
         <button
-          className="px-10 py-[18px] rounded-[30px] relative text-white font-medium text-base transition-all duration-300 
-         bg-gradient-to-b from-[#252525] to-[#8B8B8B] 
-         border border-transparent 
-         shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)]
+          className="px-10 py-[14px] rounded-[30px] relative text-white font-medium text-base transition-all duration-300 
+         bg-gradient-to-b from-[#8B8B8B] to-50% to-[#252525] 
          cursor-pointer hover:opacity-90"
         >
-          Book Now
+          Book A Call
         </button>
       </div>
     </div>
