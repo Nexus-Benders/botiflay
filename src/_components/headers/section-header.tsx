@@ -2,7 +2,7 @@ export default function SectionHeader({
   headline,
   description = "Creative solutions, seamless collaboration, and impactful results.",
 }: {
-  headline: string;
+  headline: React.ReactNode;
   description: string;
 }) {
   return (
@@ -10,7 +10,8 @@ export default function SectionHeader({
       <div className="font-bold text-[56px] leading-[70px] uppercase text-[#262626]">
         {headline}
       </div>
-      <div className="text-[18px] leading-[32px] text-[#D9D9D9]">
+
+      <div className="text-[18px] leading-[32px] text-[#434343]">
         {description}
       </div>
     </div>
