@@ -10,7 +10,7 @@ export default function HeroSection() {
 
 function MiddleSection() {
   return (
-    <div>
+    <div className="w-[854px] mx-auto flex justify-center items-center flex-col">
       <div className="border border-[#EDEDED] rounded-full min-w-[244px] flex flex-row gap-2 py-1.5 px-3.5">
         <figure>
           <Image
@@ -38,6 +38,11 @@ function MiddleSection() {
             150+ businesses scaled
           </p>
         </div>
+      </div>
+      <div>
+        <h1 className="font-bold text-[65px] leading-[65px] uppercase text-center">
+          CRAFTING PREMIUM DESIGNS & DEVELOPMENT
+        </h1>
       </div>
     </div>
   );
