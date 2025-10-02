@@ -9,6 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-space-grotesk: var(--font-space-grotesk);
+  --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: light) {
@@ -21,5 +22,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-space-grotesk);
+  font-family: var(--font-space-grotesk), var(--font-inter);
 }
