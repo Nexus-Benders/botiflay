@@ -29,7 +29,7 @@ export default function RootLayout({
         className={` ${spaceGrotesk.variable} ${inter.variable} antialiased relative`}
       >
         <Navbar />
-        <div className="h-dvh bg-[url('/assets/hero-bg.png')] bg-cover bg-center bg-no-repeat pt-b20">
+        <div className="h-dvh bg-[url('/assets/hero-bg.png')] bg-cover bg-center bg-no-repeat ">
           {children}
         </div>
       </body>
