@@ -25,6 +25,8 @@ const DesktopNavbar = () => {
             alt="Botiflay logo"
             width={100}
             height={100}
+            quality={100}
+            priority
           />
         </figure>
       </Link>

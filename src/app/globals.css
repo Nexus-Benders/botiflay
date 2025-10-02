@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: var(--font-space-grotesk), var(--font-inter);
 }
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 25s linear infinite;
+}

@@ -14,11 +14,18 @@ const optData = [
     label: "100% Money-Back guarantee",
   },
 ];
+const logos = [
+  { id: 1, src: "/assets/Mindscope.png", alt: "Mindscope" },
+  { id: 2, src: "/assets/Mindscope.png", alt: "Mindscope" },
+  { id: 3, src: "/assets/Mindscope.png", alt: "Mindscope" },
+  { id: 4, src: "/assets/Mindscope.png", alt: "Mindscope" },
+];
 
 export default function HeroSection() {
   return (
-    <div className="h-dvh flex justify-center items-center">
+    <div className="h-dvh flex justify-center items-center relative">
       <MiddleSection />
+      <HeroFooter />
     </div>
   );
 }
@@ -90,5 +97,49 @@ function MiddleSection() {
         </button>
       </div>
     </div>
+  );
+}
+
+function HeroFooter() {
+  return (
+    <div className="flex flex-row gap-2 absolute bottom-14 left-0 ">
+      <Collaboration />
+    </div>
+  );
+}
+
+function Collaboration() {
+  return (
+    <section className="w-full  max-w-[320px] flex flex-col gap-[14px] ">
+      <h2 className="font-[500] text-[20px] leading-[24px] text-[#262626]">
+        Collaboration With Us
+      </h2>
+
+      <div className="relative w-full overflow-hidden">
+        {/* Left fog */}
+        <div className="absolute left-0 top-0 z-20 h-full w-24 pointer-events-none bg-gradient-to-r from-white via-white/70 to-transparent" />
+
+        {/* Right fog */}
+        <div className="absolute right-0 top-0 z-20 h-full w-24 pointer-events-none bg-gradient-to-l from-white via-white/70 to-transparent" />
+
+        {/* Sliding track */}
+        <div className="flex w-max animate-infinite-scroll">
+          {[...logos, ...logos].map((logo, idx) => (
+            <div
+              key={idx}
+              className="z-10 flex items-center justify-center flex-shrink-0 w-32 h-8 px-6 grayscale hover:grayscale-0 transition"
+            >
+              <Image
+                width={300}
+                height={300}
+                src={logo.src}
+                alt={logo.alt}
+                className="max-h-12"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
