@@ -32,7 +32,7 @@ export default function HeroSection() {
 
 function MiddleSection() {
   return (
-    <div className="w-[854px] mx-auto flex justify-center items-center flex-col">
+    <div className="w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16">
       <div className="border border-[#EDEDED] rounded-full min-w-[244px] flex flex-row gap-2 py-1.5 px-3.5">
         <figure>
           <Image
