@@ -1,4 +1,5 @@
 import Container from "@/_components/layout/container";
+import AboutUs from "@/_components/sections/about-us";
 import GallerySlider from "@/_components/sections/gallery-slider";
 import HeroSection from "@/_components/sections/hero-section";
 import React from "react";
@@ -10,6 +11,9 @@ export default function page() {
         <HeroSection />
       </Container>
       <GallerySlider />
+      <Container>
+        <AboutUs />
+      </Container>
     </div>
   );
 }
