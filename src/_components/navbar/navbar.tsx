@@ -6,9 +6,11 @@ import { NAV_LINKS } from "@/constants/nav-links";
 
 export default function Navbar() {
   return (
-    <Container>
-      <DesktopNavbar />
-    </Container>
+    <div className="sticky top-0 z-50">
+      <Container>
+        <DesktopNavbar />
+      </Container>
+    </div>
   );
 }
 
