@@ -17,7 +17,7 @@ const optData = [
 
 export default function HeroSection() {
   return (
-    <div className="min-h-dvh flex justify-center items-center">
+    <div className="h-dvh flex justify-center items-center">
       <MiddleSection />
     </div>
   );
@@ -77,6 +77,17 @@ function MiddleSection() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="mt-12">
+        <button
+          className="px-10 py-[18px] rounded-[30px] relative text-white font-medium text-base transition-all duration-300 
+         bg-gradient-to-b from-[#252525] to-[#8B8B8B] 
+         border border-transparent 
+         shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)]
+         cursor-pointer hover:opacity-90"
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );

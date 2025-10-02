@@ -19,7 +19,13 @@ const DesktopNavbar = () => {
     <div className="flex flex-row justify-between items-center py-5">
       <Link href={"/"}>
         <figure>
-          <Image src="/logo.png" alt="Botiflay logo" width={100} height={100} />
+          <Image
+            className="w-[175px] h-[40px]"
+            src="/logo.png"
+            alt="Botiflay logo"
+            width={100}
+            height={100}
+          />
         </figure>
       </Link>
       <div className="flex-1 flex justify-center items-center ">
