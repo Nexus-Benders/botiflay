@@ -31,11 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[url("/assets/hero-bg.png")] bg-cover bg-center min-h-dvh`}
+        className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased relative`}
       >
         <Navbar />
-
-        {children}
+        <div className="h-dvh bg-[url('/assets/hero-bg.png')] bg-cover bg-center bg-no-repeat pt-20">
+          {children}
+        </div>
       </body>
     </html>
   );

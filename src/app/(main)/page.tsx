@@ -7,8 +7,6 @@ export default function page() {
       <div className="h-dvh">Hello</div>
       <div className="h-dvh">Hello</div>
       <div className="h-dvh">Hello</div>
-      <div className="h-dvh">Hello</div>
-      <div className="h-dvh">Hello</div>
     </Container>
   );
 }
