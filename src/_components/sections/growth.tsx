@@ -23,18 +23,18 @@ function Card() {
     <div className="flex items-center justify-center ">
       <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Growth Card */}
-        <div className="bg-[#FAFAFA] rounded-2xl shadow-sm border border-gray-200 p-3 ">
+        <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3 ">
           <div className=" border rounded-2xl border-[#F5F5F6] p-3 bg-[#FFFFFF]">
             <GradientText text="Growth" />
-            <div className="grid grid-cols-2  gap-8 mb-8 text-center py-4">
+            <div className="grid grid-cols-2  gap-8 mb-2 text-center py-4">
               <div className="">
-                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B]">
+                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B] font-manrope">
                   80%
                 </div>
                 <CardParagraph text="Improved feedback" />
               </div>
               <div className="">
-                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B]">
+                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B] font-manrope">
                   56%
                 </div>
                 <CardParagraph text="New projects" />
@@ -42,7 +42,6 @@ function Card() {
             </div>
             <CardStats type="Success" value="92%" />
           </div>
-
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             Success as a Service
           </h3>

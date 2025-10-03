@@ -1,6 +1,6 @@
 import Navbar from "@/_components/navbar/navbar";
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -10,6 +10,11 @@ const spaceGrotesk = Space_Grotesk({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${spaceGrotesk.variable} ${inter.variable} antialiased relative`}
+        className={` ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} antialiased relative`}
       >
         <Navbar />
         <div className="h-dvh bg-[url('/assets/hero-bg.png')] bg-cover bg-center bg-no-repeat ">
