@@ -20,34 +20,27 @@ export default function Growth() {
 
 function Card() {
   return (
-    <div className="flex items-center justify-center p-8">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="flex items-center justify-center ">
+      <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Growth Card */}
-        <div className="bg-[#FAFAFA] rounded-2xl shadow-sm border border-gray-200 p-3">
-          <div className=" border rounded-2xl border-[#F5F5F6] p-8 bg-[#FFFFFF]">
+        <div className="bg-[#FAFAFA] rounded-2xl shadow-sm border border-gray-200 p-3 ">
+          <div className=" border rounded-2xl border-[#F5F5F6] p-3 bg-[#FFFFFF]">
             <GradientText text="Growth" />
-            <div className="grid grid-cols-2 gap-8 mb-8">
-              <div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">80%</div>
-                <div className="text-sm text-gray-600">Improved feedback</div>
+            <div className="grid grid-cols-2  gap-8 mb-8 text-center py-4">
+              <div className="">
+                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B]">
+                  80%
+                </div>
+                <CardParagraph text="Improved feedback" />
               </div>
-              <div>
-                <div className="text-5xl font-bold text-gray-900 mb-2">56%</div>
-                <div className="text-sm text-gray-600">New projects</div>
-              </div>
-            </div>
-            <div className="">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">Success</span>
-                <span className="text-sm font-semibold text-gray-900">92%</span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className="bg-lime-500 h-2 rounded-full"
-                  style={{ width: "92%" }}
-                ></div>
+              <div className="">
+                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B]">
+                  56%
+                </div>
+                <CardParagraph text="New projects" />
               </div>
             </div>
+            <CardStats type="Success" value="92%" />
           </div>
 
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -136,5 +129,35 @@ function GradientText({ text }: { text: string }) {
     <h2 className="text-2xl leading-8 font-[500]  bg-gradient-to-r from-[#141C01] from-0% to-[#9DE500] to-[100%] text-transparent bg-clip-text">
       {text}
     </h2>
+  );
+}
+
+function CardParagraph({ text }: { text: string }) {
+  return (
+    <p className="text-sm text-[#0B0B0B] font-[500] font-space-grotesk text-[16px] leading-[20px] tracking-[-2%]">
+      {text}
+    </p>
+  );
+}
+
+function CardStats({ type, value }: { type: string; value: string }) {
+  return (
+    <div>
+      <div className="flex items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
+        <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
+          {type}
+        </span>
+        <div className="w-full bg-[#EAF8CB] rounded-full h-2">
+          <div
+            className="bg-lime-500 h-2 rounded-full"
+            style={{ width: value }}
+          />
+        </div>
+        <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
+          {value}
+        </span>
+      </div>
+      {/* Progress bar */}
+    </div>
   );
 }
