@@ -3,6 +3,7 @@ import AboutUs from "@/_components/sections/about-us";
 import GallerySlider from "@/_components/sections/gallery-slider";
 import Growth from "@/_components/sections/growth";
 import HeroSection from "@/_components/sections/hero-section";
+import HowWeWork from "@/_components/sections/how-we-work";
 import React from "react";
 
 export default function page() {
@@ -15,6 +16,7 @@ export default function page() {
       <Container>
         <AboutUs />
         <Growth />
+        <HowWeWork />
       </Container>
     </div>
   );
