@@ -1,3 +1,4 @@
+import React from "react";
 import SectionHeader from "../headers/section-header";
 
 export default function Growth() {
@@ -24,7 +25,7 @@ function Card() {
       <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Growth Card */}
         <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3 ">
-          <div className=" border rounded-2xl border-[#F5F5F6] p-3 bg-[#FFFFFF]">
+          <div className=" border rounded-2xl border-[#F5F5F6] p-5 bg-[#FFFFFF]">
             <GradientText text="Growth" />
             <div className="grid grid-cols-2  gap-8 mb-2 text-center py-4">
               <div className="">
@@ -42,41 +43,42 @@ function Card() {
             </div>
             <CardStats type="Success" value="92%" />
           </div>
-          <div className="pt-6 px-4 flex flex-col gap-2">
-            <CardHeading
-              text={
-                <p>
-                  Success as a <br /> Service
-                </p>
-              }
-            />
-            <CardDetails
-              text={
-                "We have been transforming SaaS products for over 5 years by designing unique interfaces & driving growth."
-              }
-            />
-          </div>
+          <CardDetails
+            text={
+              "We have been transforming SaaS products for over 5 years by designing unique interfaces & driving growth."
+            }
+            title={
+              <span>
+                Success as a <br /> Service
+              </span>
+            }
+          />
         </div>
 
         {/* Conversion Focused Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-          <GradientText text="Conversion Focused" />
+        <div className="bg-[#FFFFFF]  rounded-2xl shadow-sm border border-gray-200 p-3 ">
+          <div className=" border rounded-2xl relative border-[#F5F5F6]  bg-[#FFFFFF] p-5">
+            <GradientText text="Conversion Focused" />
 
-          <div className="flex flex-col items-center mb-8">
-            <div className="text-6xl font-bold text-gray-900 mb-6">200%</div>
-            <div className="relative w-32 h-32 mb-6">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lime-400 to-lime-600"></div>
-              <div className="absolute inset-6 rounded-full bg-white"></div>
+            <div className="flex  flex-col items-center  pt-4 space-y-4">
+              <div className="font-manrope font-semibold text-[40px] leading-[48px] text-[#0B0B0B] tracking-[-2%]">
+                200%
+              </div>
+              <div className="w-full h-[2px] absolute top-[75%] bg-[#F5F5F6]" />
+
+              <div className="relative w-16 h-16 ">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lime-600 to-lime-600 " />
+                <div className="absolute inset-5 rounded-full bg-white"></div>
+              </div>
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Conversion-Focused Design
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-            Websites so stunning that it will increases your conversion rate by
-            200%, decrease the bounce.
-          </p>
+          <CardDetails
+            text={
+              "Websites so stunning that it will increases your conversion rate by 200%, decrease the bounce."
+            }
+            title={"Conversion-Focused Design"}
+          />
         </div>
 
         {/* Market Analytics Card */}
@@ -117,13 +119,12 @@ function Card() {
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Stay Ahead of the Market
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-            Designs that makes you and your venture shine in the crowd of
-            similar looking websites.
-          </p>
+          <CardDetails
+            text={
+              "Designs that makes you and your venture shine in the crowd of similar looking websites."
+            }
+            title={"Stay Ahead of the Market"}
+          />
         </div>
       </div>
     </div>
@@ -176,10 +177,19 @@ function CardHeading({ text }: { text: React.ReactNode }) {
   );
 }
 
-function CardDetails({ text }: { text: string }) {
+function CardDetails({
+  text,
+  title,
+}: {
+  text: string;
+  title: React.ReactNode;
+}) {
   return (
-    <p className="font-[400] text-lg leading-7 tracking-[-2%] text-[#393939]">
-      {text}
-    </p>
+    <div className="pt-6 px-4 flex flex-col gap-2">
+      <CardHeading text={title} />
+      <p className="font-[400] text-lg leading-7 tracking-[-2%] text-[#393939]">
+        {text}
+      </p>
+    </div>
   );
 }
