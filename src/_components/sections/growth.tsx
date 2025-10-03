@@ -21,7 +21,7 @@ export default function Growth() {
 
 function Card() {
   return (
-    <div className="flex items-center justify-center ">
+    <div className="flex items-center justify-center  pt-9">
       <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Growth Card */}
         <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3 ">
@@ -81,13 +81,15 @@ function Card() {
           />
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-          <GradientText text="Market Analytics" />
-          <CardParagraph text="Stats will speak for itself" />
+        <div className="bg-[#FFFFFF]  rounded-2xl shadow-sm border border-gray-200 p-3 ">
+          <div className=" border rounded-2xl relative border-[#F5F5F6]  bg-[#FFFFFF] p-5 space-y-4">
+            <GradientText text="Market Analytics" />
+            <CardParagraph text="Stats will speak for itself" />
 
-          <div className="space-y-6 mb-8">
-            <CardStats type="User Rating" value="80%" />
-            <CardStats type="Leads" value="150%" />
+            <div className="space-y-3">
+              <CardStats type="User Rating" value="80%" />
+              <CardStats type="Leads" value="150%" />
+            </div>
           </div>
           <CardDetails
             text={
