@@ -6,6 +6,7 @@ import Growth from "@/_components/sections/growth";
 import HeroSection from "@/_components/sections/hero-section";
 import HowWeWork from "@/_components/sections/how-we-work";
 import OurService from "@/_components/sections/our-service";
+import OurWork from "@/_components/sections/our-work";
 import React from "react";
 
 export default function page() {
@@ -22,6 +23,7 @@ export default function page() {
       </Container>
       <BlackBgSections>
         <OurService />
+        <OurWork />
       </BlackBgSections>
     </div>
   );
