@@ -42,13 +42,20 @@ function Card() {
             </div>
             <CardStats type="Success" value="92%" />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Success as a Service
-          </h3>
-          <p className="text-gray-600 leading-relaxed">
-            We have been transforming SaaS products for over 5 years by
-            designing unique interfaces & driving growth.
-          </p>
+          <div className="pt-6 px-4 flex flex-col gap-2">
+            <CardHeading
+              text={
+                <p>
+                  Success as a <br /> Service
+                </p>
+              }
+            />
+            <CardDetails
+              text={
+                "We have been transforming SaaS products for over 5 years by designing unique interfaces & driving growth."
+              }
+            />
+          </div>
         </div>
 
         {/* Conversion Focused Card */}
@@ -158,5 +165,21 @@ function CardStats({ type, value }: { type: string; value: string }) {
       </div>
       {/* Progress bar */}
     </div>
+  );
+}
+
+function CardHeading({ text }: { text: React.ReactNode }) {
+  return (
+    <h3 className="text-[34px] leading-[44px] font-bold text-[#2F2F2F] ">
+      {text}
+    </h3>
+  );
+}
+
+function CardDetails({ text }: { text: string }) {
+  return (
+    <p className="font-[400] text-lg leading-7 tracking-[-2%] text-[#393939]">
+      {text}
+    </p>
   );
 }
