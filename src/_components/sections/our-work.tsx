@@ -54,8 +54,8 @@ export default function OurWork() {
     <div className="py-12 flex flex-col justify-center items-center text-center">
       <SectionHeader headline={"Our Work"} hasBlackBg />
       <div className="flex flex-col gap-4">
-        {cardData?.map((item) => (
-          <ProjectCard key={item.id} {...item} />
+        {cardData?.map((item, idx) => (
+          <ProjectCard key={item.id} {...item} isReveresed={idx % 2 === 0} />
         ))}
       </div>
     </div>
@@ -70,6 +70,7 @@ function ProjectCard({
   clientRating,
   tags,
   image,
+  isReveresed,
 }: {
   title: string;
   description: string;
@@ -78,13 +79,22 @@ function ProjectCard({
   clientRating: string;
   tags: string[];
   image: string;
+  isReveresed: boolean;
 }) {
   return (
-    <div className="bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl grid grid-cols-[63%_36%] gap-6 p-8">
-      <figure className="w-full">
+    <div
+      className={`bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl grid  ${
+        isReveresed ? "grid-cols-[36%_63%]" : "grid-cols-[63%_36%]"
+      } gap-6 p-8 `}
+    >
+      <figure className={`w-full ${isReveresed ? "order-2" : "order-1"}`}>
         <Image src={`/work/${image}`} alt="" width={1000} height={1000} />
       </figure>
-      <div className="bg-[#2D2D2D] rounded-2xl p-3">
+      <div
+        className={`bg-[#2D2D2D] rounded-2xl p-3 ${
+          isReveresed ? "order-1" : "order-2"
+        }`}
+      >
         <h2 className="text-2xl font-bold mb-4">{title}</h2>
 
         {/* Description */}
