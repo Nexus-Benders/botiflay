@@ -46,7 +46,14 @@ function Slider() {
             >
               {/* Duplicate images for infinite scroll effect */}
               {[...images, ...images, ...images].map((img, imgIndex) => (
-                <>
+                <div
+                  className={`flex flex-col gap-6 ${
+                    colIndex % 2 === 0
+                      ? "animate-slide-down"
+                      : "animate-slide-up"
+                  }`}
+                  key={imgIndex}
+                >
                   <div
                     key={imgIndex}
                     className="relative rounded-2xl max-h-56 overflow-hidden aspect-[3/4] flex-shrink-0 "
@@ -62,7 +69,7 @@ function Slider() {
                     />
                   </div>
                   <div className="bg-[#727171] h-4 w-full rounded-full" />
-                </>
+                </div>
               ))}
             </div>
           </div>
