@@ -69,7 +69,9 @@ function PhaseCard({ phase, title, items }: PhaseCardProps) {
   return (
     <div className="relative p-8 rounded-[24.5px] shadow-[0px_2px_8px_0px_#00000026,inset_0px_-1px_1.7px_0px_#0000002B]">
       <div className="mb-6">
-        <p className="text-sm text-gray-600 mb-3">{phase}</p>
+        <p className="text-xs leading-3.5 text-[#434343] font-[500] border-[#F5F5F6] border-[1px] font-inter w-fit px-2 py-1 rounded-full">
+          {phase}
+        </p>
         <h3 className="text-3xl font-bold text-gray-900 leading-tight">
           {title}
         </h3>
