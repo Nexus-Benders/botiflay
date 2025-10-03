@@ -53,7 +53,7 @@ export default function OurWork() {
   return (
     <div className="py-12 flex flex-col justify-center items-center text-center">
       <SectionHeader headline={"Our Work"} hasBlackBg />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 py-12">
         {cardData?.map((item, idx) => (
           <ProjectCard key={item.id} {...item} isReveresed={idx % 2 === 0} />
         ))}
