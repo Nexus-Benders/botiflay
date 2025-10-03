@@ -1,11 +1,16 @@
 import { FaRegCircle } from "react-icons/fa";
 import SectionHeader from "../headers/section-header";
+import { ReactNode } from "react";
 
 function HowWeWork() {
   const phases = [
     {
       phase: "Discovery Phase",
-      title: "Research and Strategy",
+      title: (
+        <p>
+          Research and <br /> Strategy
+        </p>
+      ),
       items: [
         "Stakeholder Interviews",
         "User Research",
@@ -17,12 +22,20 @@ function HowWeWork() {
     },
     {
       phase: "Ideation Phase",
-      title: "Design and Prototyping",
+      title: (
+        <p>
+          Design and <br /> Prototyping
+        </p>
+      ),
       items: ["Wireframing", "UI Design", "Prototyping", "Usability Testing"],
     },
     {
       phase: "Implementation Phase",
-      title: "Development Handoff & Testing",
+      title: (
+        <p>
+          Development <br /> Handoff & Testing
+        </p>
+      ),
       items: [
         "Developer Handoff",
         "Front-End Development",
@@ -61,27 +74,29 @@ export default HowWeWork;
 
 interface PhaseCardProps {
   phase: string;
-  title: string;
+  title: ReactNode;
   items: string[];
 }
 
 function PhaseCard({ phase, title, items }: PhaseCardProps) {
   return (
-    <div className="relative p-8 rounded-[24.5px] shadow-[0px_2px_8px_0px_#00000026,inset_0px_-1px_1.7px_0px_#0000002B]">
-      <div className="mb-6">
+    <div className="relative p-8 rounded-[24.5px] shadow-[0px_2px_8px_0px_#00000026,inset_0px_-1px_1.7px_0px_#0000002B] space-y-5 ">
+      <div className="space-y-5">
         <p className="text-xs leading-3.5 text-[#434343] font-[500] border-[#F5F5F6] border-[1px] font-inter w-fit px-2 py-1 rounded-full">
           {phase}
         </p>
-        <h3 className="text-3xl font-bold text-gray-900 leading-tight">
+        <h3 className="font-bold text-[34px]  leading-[44px] font-space-grotesk">
           {title}
         </h3>
       </div>
 
       <ul className="space-y-3">
         {items.map((item, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <FaRegCircle className="w-2 h-2 mt-1 text-[#C4F82A] fill-[#C4F82A] flex-shrink-0" />
-            <span className="text-gray-700">{item}</span>
+          <li key={index} className="flex items-center gap-3">
+            <FaRegCircle className="w-3 h-3  text-[#C4F82A] fill-[#C4F82A] flex-shrink-0" />
+            <span className="font-[400] text-[16px] leading-[26px] text-[#434343]">
+              {item}
+            </span>
           </li>
         ))}
       </ul>
