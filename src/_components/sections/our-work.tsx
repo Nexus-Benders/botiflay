@@ -91,40 +91,42 @@ function ProjectCard({
         <Image src={`/work/${image}`} alt="" width={1000} height={1000} />
       </figure>
       <div
-        className={`bg-[#2D2D2D] rounded-2xl p-3 ${
+        className={`bg-[#2D2D2D] text-start rounded-2xl p-8 space-y-8 ${
           isReveresed ? "order-1" : "order-2"
         }`}
       >
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-
-        {/* Description */}
-        <p className="text-gray-300 mb-8 leading-relaxed">{description}</p>
-
-        {/* Info Section */}
-        <div className="space-y-3 text-gray-200">
-          <div className="flex justify-between border-b border-gray-700 pb-2">
-            <span className="font-medium">Client</span>
-            <span className="text-gray-400">{client}</span>
-          </div>
-          <div className="flex justify-between border-b border-gray-700 pb-2">
-            <span className="font-medium">Role</span>
-            <span className="text-gray-400">{role}</span>
-          </div>
-          <div className="flex justify-between pb-2">
-            <span className="font-medium">Client Rating</span>
-            <span className="text-gray-400">{clientRating}</span>
-          </div>
+        <div className="space-y-6">
+          <h2 className="text-[34px] leading-[44px]  font-bold ">{title}</h2>
+          <p className="font-[400] text-lg leading-7">{description}</p>
         </div>
 
-        <div className="flex flex-wrap gap-3 mt-8">
-          {tags?.map((tag) => (
-            <span
-              key={tag}
-              className="bg-[#2A2A2A] text-gray-300 px-4 py-2 rounded-full text-sm"
-            >
-              {tag}
-            </span>
-          ))}
+        {/* Info Section */}
+        <div className="space-y-8">
+          <div className="space-y-3 text-white font-[300] text-sm leading-7 tracking-[-2%]">
+            <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+              <span>Client</span>
+              <span>{client}</span>
+            </div>
+            <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+              <span>Role</span>
+              <span>{role}</span>
+            </div>
+            <div className="flex justify-between pb-2">
+              <span>Client Rating</span>
+              <span>{clientRating}</span>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-3 ">
+            {tags?.map((tag) => (
+              <span
+                key={tag}
+                className="bg-[#FFFFFF26] font-[14px] leading-5 tracking-tight text-gray-300 px-4 py-2 rounded-full text-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>
