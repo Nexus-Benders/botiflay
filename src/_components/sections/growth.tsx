@@ -81,44 +81,14 @@ function Card() {
           />
         </div>
 
-        {/* Market Analytics Card */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
           <GradientText text="Market Analytics" />
-          <p className="text-sm text-gray-500 mb-8">
-            Stats will speak for itself
-          </p>
+          <CardParagraph text="Stats will speak for itself" />
 
           <div className="space-y-6 mb-8">
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">User Rating</span>
-                <span className="text-sm font-semibold text-gray-900">
-                  +80%
-                </span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className="bg-lime-500 h-2 rounded-full"
-                  style={{ width: "80%" }}
-                ></div>
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-gray-600">Leads</span>
-                <span className="text-sm font-semibold text-gray-900">
-                  +150%
-                </span>
-              </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
-                <div
-                  className="bg-lime-500 h-2 rounded-full"
-                  style={{ width: "100%" }}
-                ></div>
-              </div>
-            </div>
+            <CardStats type="User Rating" value="80%" />
+            <CardStats type="Leads" value="150%" />
           </div>
-
           <CardDetails
             text={
               "Designs that makes you and your venture shine in the crowd of similar looking websites."
@@ -150,14 +120,14 @@ function CardParagraph({ text }: { text: string }) {
 function CardStats({ type, value }: { type: string; value: string }) {
   return (
     <div>
-      <div className="flex items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
+      <div className=" grid grid-cols-[30%_50%_10%] items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
         <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
           {type}
         </span>
         <div className="w-full bg-[#EAF8CB] rounded-full h-2">
           <div
             className="bg-lime-500 h-2 rounded-full"
-            style={{ width: value }}
+            style={{ width: value === "150%" ? "70%" : value }}
           />
         </div>
         <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
