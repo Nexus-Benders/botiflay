@@ -314,13 +314,13 @@ function Button({ label }: { label: string }) {
   return (
     <button
       className="w-full relative rounded-full 
-    bg-gradient-to-b from-[#252525] to-[#8B8B8B] 
+    bg-gradient-to-b from-[#8B8B8B] to-[#252525] duration-300
     text-white py-3 px-6 font-medium 
     cursor-pointer
     [border-image:linear-gradient(to_bottom,#474747,rgba(255,255,255,0))_1] 
     shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)] 
-    transition-all duration-300 
-    hover:from-[#1F1F1F] hover:to-[#777777]"
+    transition-all 
+    hover:from-[#8b8b8bd5] hover:to-[#252525]"
     >
       {label}
     </button>
@@ -360,9 +360,9 @@ function CardTop({
       <p className="text-[14px] text-[#434343]">{milestone}</p>
       <p className="text-[12px] text-[#434343]">(50% advance, 50% on final)</p>
 
-      <div className="space-y-3 mt-4">
+      <div className="space-y-1 mt-4">
         <Button label={"Get Started Today"} />
-        <button className="w-full text-[#434343] text-center py-2 font-medium">
+        <button className="w-full text-[#434343] text-[14px] leading-4 underline font-[500] text-center py-2 ">
           Book A Call
         </button>
       </div>
