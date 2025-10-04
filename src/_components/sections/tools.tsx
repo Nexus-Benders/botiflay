@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionHeader from "../headers/section-header";
 
 interface Tool {
   icon: React.ReactNode;
@@ -73,16 +74,11 @@ const tools: Tool[] = [
 
 function Tools() {
   return (
-    <div className="min-h-screen bg-neutral-900 text-white py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-4 tracking-tight">TOOLS</h1>
-          <p className="text-gray-400 text-lg">
-            Creative solutions, seamless collaboration, and impactful results.
-          </p>
-        </div>
+    <div className=" text-white py-20 px-4">
+      <div className="max-w-5xl mx-auto text-center space-y-16">
+        <SectionHeader hasBlackBg headline={<p>TOOLS</p>} />
 
-        <div className="bg-neutral-800/50 rounded-3xl p-12 backdrop-blur-sm border border-neutral-700/50">
+        <div className="bg-neutral-800/50 rounded-3xl  backdrop-blur-sm border border-neutral-700/50">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {tools.map((tool, index) => (
               <div
