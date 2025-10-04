@@ -7,6 +7,7 @@ import HeroSection from "@/_components/sections/hero-section";
 import HowWeWork from "@/_components/sections/how-we-work";
 import OurService from "@/_components/sections/our-service";
 import OurWork from "@/_components/sections/our-work";
+import Testimonial from "@/_components/sections/testimonial";
 import React from "react";
 
 export default function page() {
@@ -24,6 +25,7 @@ export default function page() {
       <BlackBgSections>
         <OurService />
         <OurWork />
+        <Testimonial />
       </BlackBgSections>
     </div>
   );
