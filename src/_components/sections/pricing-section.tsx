@@ -54,7 +54,7 @@ export default function PricingSection() {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card 1: Landing Page + Dev */}
-          <div className="bg-white rounded-2xl border border-[#F0F0F0] shadow-sm p-8">
+          <div className="bg-white  rounded-[30px] border border-[#F0F0F0] shadow-sm p-8">
             <div className="space-y-4">
               <CardTop
                 label="LANDING PAGE + DEV"
@@ -100,7 +100,7 @@ export default function PricingSection() {
           </div>
 
           {/* Card 2: Full Website */}
-          <div className="bg-white rounded-2xl border border-[#F0F0F0] shadow-sm p-8">
+          <div className="bg-white  rounded-[30px] border border-[#F0F0F0] shadow-sm p-8">
             <div className="space-y-6">
               <CardTop
                 label="FULL WEBSITE"
@@ -146,13 +146,13 @@ export default function PricingSection() {
           </div>
 
           {/* Card 3: Custom (Dark Card) */}
-          <div className="bg-gradient-to-b from-[#2D2D2D] to-[#3A3A3A] rounded-2xl shadow-lg p-8 text-white h-fit">
+          <div className="bg-gradient-to-b from-[#8B8B8B] to-[#252525] rounded-[30px] shadow-lg p-8 text-white h-fit">
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-[24px] leading-[32px] text-white mb-3">
+                <h3 className="font-bold text-[24px] leading-[34px] text-white mb-3">
                   CUSTOM
                 </h3>
-                <p className="text-[16px] leading-[24px] text-white/90 mb-8">
+                <p className="text-[14px] leading-[20px] text-[#D9D9D9]">
                   Tailored solutions built to match your brand, vision, and
                   functionality needs.
                 </p>
@@ -160,17 +160,15 @@ export default function PricingSection() {
 
               {/* Buttons */}
               <div className="space-y-3">
-                <button className="w-full bg-gradient-to-b from-[#4A4A4A] to-[#6A6A6A] text-white py-3 px-6 rounded-lg font-medium shadow-sm hover:from-[#3A3A3A] hover:to-[#5A5A5A] transition-all">
-                  Request Quote
-                </button>
-                <button className="w-full text-white text-center py-2 font-medium">
+                <Button label="Request Quote" />
+                <button className="w-full text-[#D9D9D9] text-[14px] leading-4 underline font-[500] text-center py-2 ">
                   Book A Call
                 </button>
               </div>
 
               {/* Services Section */}
-              <div className="border-t border-white/20 pt-6">
-                <h4 className="font-bold text-[18px] text-white mb-4">
+              <div className="">
+                <h4 className="font-[500] leading-[18px] text-[18px] text-[#EFEFEF] mb-4">
                   Services
                 </h4>
                 <ul className="space-y-3">
@@ -182,20 +180,14 @@ export default function PricingSection() {
                     "Web application",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-2 h-2 text-[#2D2D2D]"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-[14px] text-white/90">{item}</span>
+                      <Image
+                        src={"/assets/whiteTick.png"}
+                        alt="tick"
+                        width={100}
+                        height={100}
+                        className="size-5"
+                      />
+                      <span className="text-[14px] text-[#EFEFEF]">{item}</span>
                     </li>
                   ))}
                 </ul>
