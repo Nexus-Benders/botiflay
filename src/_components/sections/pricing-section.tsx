@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import SectionHeader from "../headers/section-header";
 
 export default function PricingSection() {
   const [pricingModel, setPricingModel] = useState<"one-time" | "subscription">(
@@ -16,23 +17,26 @@ export default function PricingSection() {
     <div className="py-20 px-4 bg-[#F8F8F8]">
       <div className="mx-auto max-w-7xl">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="font-bold text-[56px] leading-[70px] text-[#262626] uppercase mb-4">
-            PRICING PLAN
-          </h2>
-          <p className="text-[18px] leading-[32px] text-[#434343] mb-8 max-w-4xl mx-auto">
-            Choose the perfect plan for your business. Whether you need a simple
-            landing page or a full-scale custom website, we&apos;ve got you
-            covered!
-          </p>
+        <div className="text-center mb-12 max-w-[734px] mx-auto flex flex-col gap-12">
+          <SectionHeader
+            headline={<p>PRICING PLAN</p>}
+            description="Choose the perfect plan for your business. Whether you need a simple landing page or a full-scale custom website, we've got you covered!"
+          />
 
           {/* Pricing Model Toggle */}
-          <div className="inline-flex bg-white border border-[#E5E5E5] rounded-full p-1 shadow-sm">
+          <div className="inline-flex text-nowrap w-fit mx-auto bg-white border border-[#E5E5E5] rounded-full shadow-sm">
             <button
               onClick={() => setPricingModel("one-time")}
               className={`px-8 py-3 rounded-full font-medium transition-all ${
                 pricingModel === "one-time"
-                  ? "bg-gradient-to-b from-[#4A4A4A] to-[#6A6A6A] text-white shadow-sm"
+                  ? `w-full relative rounded-full 
+    bg-gradient-to-b from-[#8B8B8B] to-[#252525] duration-300
+    text-white py-3 px-6 font-medium 
+    cursor-pointer
+    [border-image:linear-gradient(to_bottom,#474747,rgba(255,255,255,0))_1] 
+    shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)] 
+    transition-all 
+    hover:from-[#8b8b8bd5] hover:to-[#252525]`
                   : "text-[#9CA3AF] hover:text-[#6B7280]"
               }`}
             >
@@ -42,7 +46,14 @@ export default function PricingSection() {
               onClick={() => setPricingModel("subscription")}
               className={`px-8 py-3 rounded-full font-medium transition-all ${
                 pricingModel === "subscription"
-                  ? "bg-gradient-to-b from-[#4A4A4A] to-[#6A6A6A] text-white shadow-sm"
+                  ? `w-full relative rounded-full 
+    bg-gradient-to-b from-[#8B8B8B] to-[#252525] duration-300
+    text-white py-3 px-6 font-medium 
+    cursor-pointer
+    [border-image:linear-gradient(to_bottom,#474747,rgba(255,255,255,0))_1] 
+    shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)] 
+    transition-all 
+    hover:from-[#8b8b8bd5] hover:to-[#252525]`
                   : "text-[#9CA3AF] hover:text-[#6B7280]"
               }`}
             >
