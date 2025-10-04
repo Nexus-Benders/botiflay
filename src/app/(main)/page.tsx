@@ -10,6 +10,7 @@ import OurService from "@/_components/sections/our-service";
 import OurWork from "@/_components/sections/our-work";
 import PricingSection from "@/_components/sections/pricing-section";
 import Testimonial from "@/_components/sections/testimonial";
+import Tools from "@/_components/sections/tools";
 import React from "react";
 
 export default function page() {
@@ -33,6 +34,9 @@ export default function page() {
       <Container>
         <MembershipBenefits />
       </Container>
+      <BlackBgSections>
+        <Tools />
+      </BlackBgSections>
     </div>
   );
 }
