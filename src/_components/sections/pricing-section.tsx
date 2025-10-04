@@ -53,43 +53,13 @@ export default function PricingSection() {
           {/* Card 1: Landing Page + Dev */}
           <div className="bg-white rounded-2xl border border-[#F0F0F0] shadow-sm p-8">
             <div className="space-y-4">
-              <div>
-                <h3 className="font-bold text-[24px] leading-[34px] text-[#434343] mb-3">
-                  LANDING PAGE + DEV
-                </h3>
-                <p className="text-[14px] leading-[20px] font-[400] text-[#434343] mb-6">
-                  Everything you need to create a high-converting, visually
-                  striking landing page.
-                </p>
-                <div className="">
-                  <span className="font-bold text-[34px] leading-[44px] text-[#434343]">
-                    $1700
-                  </span>
-                  <span className="text-[14px] font-[400] leading-5 text-[#434343]">
-                    /Project
-                  </span>
-                </div>
-                <p className="text-[14px] text-[#434343] mb-2">
-                  10-15 business days turnaround
-                </p>
-                <p className="text-[14px] text-[#434343]">
-                  Payment as 2 Milestone
-                </p>
-                <p className="text-[12px] text-[#434343]">
-                  (50% advance, 50% on final)
-                </p>
-              </div>
-
-              {/* Buttons */}
-              <div className="space-y-3">
-                <button className="w-full bg-gradient-to-b from-[#4A4A4A] to-[#6A6A6A] text-white py-3 px-6 rounded-lg font-medium shadow-sm hover:from-[#3A3A3A] hover:to-[#5A5A5A] transition-all">
-                  Get Started Today
-                </button>
-                <button className="w-full text-[#434343] text-center py-2 font-medium">
-                  Book A Call
-                </button>
-              </div>
-
+              <CardTop
+                label="LANDING PAGE + DEV"
+                description="Everything you need to create a high-converting, visually striking landing page."
+                price="1700"
+                turnaround="10-15 business days turnaround"
+                milestone="Payment as 2 Milestone"
+              />
               {/* Design Only Section */}
               <div className="border-t border-[#F0F0F0] pt-6">
                 <h4 className="font-bold text-[24px] leading-[34px] text-[#434343] mb-3">
@@ -178,42 +148,13 @@ export default function PricingSection() {
           {/* Card 2: Full Website */}
           <div className="bg-white rounded-2xl border border-[#F0F0F0] shadow-sm p-8">
             <div className="space-y-6">
-              <div>
-                <h3 className="font-bold text-[24px] leading-[34px] text-[#434343] mb-3">
-                  FULL WEBSITE
-                </h3>
-                <p className="text-[14px] leading-[20px] font-[400] text-[#434343] mb-6">
-                  A complete, custom-built website to elevate your brand and
-                  engage your audience.
-                </p>
-                <div className="mb-4">
-                  <span className="font-bold text-[32px] leading-[40px] text-[#262626]">
-                    $35000
-                  </span>
-                  <span className="text-[16px] text-[#434343] ml-2">
-                    /Project
-                  </span>
-                </div>
-                <p className="text-[14px] text-[#434343] mb-2">
-                  25-40 business days turnaround
-                </p>
-                <p className="text-[14px] text-[#434343]">
-                  Payment as 2 Milestone
-                </p>
-                <p className="text-[12px] text-[#434343]">
-                  (50% advance, 50% on final)
-                </p>
-              </div>
-
-              {/* Buttons */}
-              <div className="space-y-3">
-                <button className="w-full bg-gradient-to-b from-[#4A4A4A] to-[#6A6A6A] text-white py-3 px-6 rounded-lg font-medium shadow-sm hover:from-[#3A3A3A] hover:to-[#5A5A5A] transition-all">
-                  Get Started Today
-                </button>
-                <button className="w-full text-[#434343] text-center py-2 font-medium">
-                  Book A Call
-                </button>
-              </div>
+              <CardTop
+                label="FULL WEBSITE"
+                description="A complete, custom-built website to elevate your brand and engage your audience."
+                price="35000"
+                turnaround="25-40 business days turnaround"
+                milestone="Payment as 2 Milestone"
+              />
 
               {/* Design Only Section */}
               <div className="border-t border-[#F0F0F0] pt-6">
@@ -364,6 +305,66 @@ export default function PricingSection() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function Button({ label }: { label: string }) {
+  return (
+    <button
+      className="w-full relative rounded-full 
+    bg-gradient-to-b from-[#252525] to-[#8B8B8B] 
+    text-white py-3 px-6 font-medium 
+    cursor-pointer
+    [border-image:linear-gradient(to_bottom,#474747,rgba(255,255,255,0))_1] 
+    shadow-[inset_0_1px_3.9px_rgba(255,255,255,0.25),inset_0_4px_3.2px_rgba(255,255,255,0.25)] 
+    transition-all duration-300 
+    hover:from-[#1F1F1F] hover:to-[#777777]"
+    >
+      {label}
+    </button>
+  );
+}
+
+function CardTop({
+  label,
+  description,
+  price,
+  turnaround,
+  milestone,
+}: {
+  label: string;
+  description: string;
+  price: string;
+  turnaround: string;
+  milestone: string;
+}) {
+  return (
+    <div>
+      <h3 className="font-bold text-[24px] leading-[34px] text-[#434343] mb-3">
+        {label}
+      </h3>
+      <p className="text-[14px] leading-[20px] font-[400] text-[#434343] mb-6">
+        {description}
+      </p>
+      <div className="">
+        <span className="font-bold text-[34px] leading-[44px] text-[#434343]">
+          {price}
+        </span>
+        <span className="text-[14px] font-[400] leading-5 text-[#434343]">
+          /Project
+        </span>
+      </div>
+      <p className="text-[14px] text-[#434343] mb-2">{turnaround}</p>
+      <p className="text-[14px] text-[#434343]">{milestone}</p>
+      <p className="text-[12px] text-[#434343]">(50% advance, 50% on final)</p>
+
+      <div className="space-y-3 mt-4">
+        <Button label={"Get Started Today"} />
+        <button className="w-full text-[#434343] text-center py-2 font-medium">
+          Book A Call
+        </button>
       </div>
     </div>
   );
