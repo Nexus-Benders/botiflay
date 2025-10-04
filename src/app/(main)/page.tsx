@@ -8,6 +8,7 @@ import HowWeWork from "@/_components/sections/how-we-work";
 import MembershipBenefits from "@/_components/sections/membership";
 import OurService from "@/_components/sections/our-service";
 import OurWork from "@/_components/sections/our-work";
+import PricingSection from "@/_components/sections/pricing-section";
 import Testimonial from "@/_components/sections/testimonial";
 import React from "react";
 
@@ -28,6 +29,7 @@ export default function page() {
         <OurWork />
         <Testimonial />
       </BlackBgSections>
+      <PricingSection />
       <Container>
         <MembershipBenefits />
       </Container>
