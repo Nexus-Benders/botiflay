@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function PricingSection() {
@@ -324,6 +325,7 @@ function Features({
   setLandingPageDev,
   landingPageDev,
   hasSwitch = false,
+  hasDescription = false,
 }: {
   label: string;
   description: string;
@@ -331,6 +333,7 @@ function Features({
   setLandingPageDev: (value: boolean) => void;
   landingPageDev: boolean;
   hasSwitch?: boolean;
+  hasDescription?: boolean;
 }) {
   return (
     <div className="border-t border-[#F0F0F0] pt-6">
@@ -341,7 +344,7 @@ function Features({
         {hasSwitch && (
           <button
             onClick={() => setLandingPageDev(!landingPageDev)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${
+            className={`relative w-12 h-6 rounded-full transition-colors cursor-pointer ${
               landingPageDev ? "bg-[#9DE500]" : "bg-[#EDEDED]"
             }`}
           >
@@ -353,24 +356,24 @@ function Features({
           </button>
         )}
       </div>
-      <p className="text-[14px] text-[#434343] mb-4">{description}</p>
+      {hasDescription && (
+        <p className="text-[14px] font-[400] leading-5 text-[#2F2F2F]">
+          {description}
+        </p>
+      )}
       <ul className="space-y-3">
         {features.map((item, index) => (
-          <li key={index} className="flex items-center gap-3">
-            <div className="w-4 h-4 bg-[#262626] rounded-full flex items-center justify-center flex-shrink-0">
-              <svg
-                className="w-2 h-2 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
-            <span className="text-[14px] text-[#434343]">{item}</span>
+          <li key={index} className="flex items-center gap-2">
+            <Image
+              src={"/assets/Tick.png"}
+              alt="tick"
+              width={100}
+              height={100}
+              className="size-5"
+            />
+            <span className="text-[16px] font-[400] leading-[26px] text-[#434343]">
+              {item}
+            </span>
           </li>
         ))}
       </ul>
