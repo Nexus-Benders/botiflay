@@ -335,12 +335,14 @@ function Features({
   return (
     <div className="border-t border-[#F0F0F0] pt-6">
       <div className="flex items-center justify-between mb-4">
-        <h4 className="font-bold text-[18px] text-[#262626]">{label}</h4>
+        <h4 className=" text-[18px] leading-6 text-[#262626] font-[500]">
+          {label}
+        </h4>
         {hasSwitch && (
           <button
             onClick={() => setLandingPageDev(!landingPageDev)}
             className={`relative w-12 h-6 rounded-full transition-colors ${
-              landingPageDev ? "bg-green-500" : "bg-gray-300"
+              landingPageDev ? "bg-[#9DE500]" : "bg-[#EDEDED]"
             }`}
           >
             <div
