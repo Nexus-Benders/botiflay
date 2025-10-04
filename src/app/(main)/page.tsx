@@ -5,6 +5,7 @@ import GallerySlider from "@/_components/sections/gallery-slider";
 import Growth from "@/_components/sections/growth";
 import HeroSection from "@/_components/sections/hero-section";
 import HowWeWork from "@/_components/sections/how-we-work";
+import MembershipBenefits from "@/_components/sections/membership";
 import OurService from "@/_components/sections/our-service";
 import OurWork from "@/_components/sections/our-work";
 import Testimonial from "@/_components/sections/testimonial";
@@ -27,6 +28,9 @@ export default function page() {
         <OurWork />
         <Testimonial />
       </BlackBgSections>
+      <Container>
+        <MembershipBenefits />
+      </Container>
     </div>
   );
 }
