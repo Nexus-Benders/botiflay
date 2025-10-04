@@ -60,88 +60,35 @@ export default function PricingSection() {
                 turnaround="10-15 business days turnaround"
                 milestone="Payment as 2 Milestone"
               />
-              {/* Design Only Section */}
-              <div className="border-t border-[#F0F0F0] pt-6">
-                <h4 className="font-bold text-[24px] leading-[34px] text-[#434343] mb-3">
-                  Design Only
-                </h4>
-                <ul className="space-y-3">
-                  {[
-                    "Single Page with style guide page",
-                    "4 Hero Iterations for homepage",
-                    "Free copywriting",
-                    "Unlimited Revision",
-                    "Full Responsive site",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-[#262626] rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-2 h-2 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-[14px] text-[#434343]">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
 
-              {/* With Development Section */}
-              <div className="border-t border-[#F0F0F0] pt-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-bold text-[18px] text-[#262626]">
-                    With Development
-                  </h4>
-                  <button
-                    onClick={() => setLandingPageDev(!landingPageDev)}
-                    className={`relative w-12 h-6 rounded-full transition-colors ${
-                      landingPageDev ? "bg-green-500" : "bg-gray-300"
-                    }`}
-                  >
-                    <div
-                      className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${
-                        landingPageDev ? "translate-x-7" : "translate-x-1"
-                      }`}
-                    />
-                  </button>
-                </div>
-                <p className="text-[14px] text-[#434343] mb-4">
-                  15 days of free supports
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Webflow or framer development",
-                    "Custom code included",
-                    "Advanced Animations",
-                    "Advanced SEO & CMS Integration",
-                    "Integrations - Analytical tools",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-[#262626] rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg
-                          className="w-2 h-2 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </div>
-                      <span className="text-[14px] text-[#434343]">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <Features
+                label="Design Only"
+                description="15 days of free supports"
+                features={[
+                  "Single Page with style guide page",
+                  "4 Hero Iterations for homepage",
+                  "Free copywriting",
+                  "Unlimited Revision",
+                  "Full Responsive site",
+                ]}
+                setLandingPageDev={setLandingPageDev}
+                landingPageDev={landingPageDev}
+              />
+
+              <Features
+                label="With Development"
+                description="15 days of free supports"
+                features={[
+                  "Webflow or framer development",
+                  "Custom code included",
+                  "Advanced Animations",
+                  "Advanced SEO & CMS Integration",
+                  "Integrations - Analytical tools",
+                ]}
+                setLandingPageDev={setFullWebsiteDev}
+                landingPageDev={fullWebsiteDev}
+                hasSwitch
+              />
             </div>
           </div>
 
@@ -366,6 +313,65 @@ function CardTop({
           Book A Call
         </button>
       </div>
+    </div>
+  );
+}
+
+function Features({
+  label,
+  description,
+  features,
+  setLandingPageDev,
+  landingPageDev,
+  hasSwitch = false,
+}: {
+  label: string;
+  description: string;
+  features: string[];
+  setLandingPageDev: (value: boolean) => void;
+  landingPageDev: boolean;
+  hasSwitch?: boolean;
+}) {
+  return (
+    <div className="border-t border-[#F0F0F0] pt-6">
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="font-bold text-[18px] text-[#262626]">{label}</h4>
+        {hasSwitch && (
+          <button
+            onClick={() => setLandingPageDev(!landingPageDev)}
+            className={`relative w-12 h-6 rounded-full transition-colors ${
+              landingPageDev ? "bg-green-500" : "bg-gray-300"
+            }`}
+          >
+            <div
+              className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${
+                landingPageDev ? "translate-x-7" : "translate-x-1"
+              }`}
+            />
+          </button>
+        )}
+      </div>
+      <p className="text-[14px] text-[#434343] mb-4">{description}</p>
+      <ul className="space-y-3">
+        {features.map((item, index) => (
+          <li key={index} className="flex items-center gap-3">
+            <div className="w-4 h-4 bg-[#262626] rounded-full flex items-center justify-center flex-shrink-0">
+              <svg
+                className="w-2 h-2 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <span className="text-[14px] text-[#434343]">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
