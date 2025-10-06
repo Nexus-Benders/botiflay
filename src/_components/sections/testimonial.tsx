@@ -110,7 +110,16 @@ function Testimonial() {
 
 export default Testimonial;
 
-function Card({ testimonial }: { testimonial: any }) {
+function Card({
+  testimonial,
+}: {
+  testimonial: {
+    text: string;
+    name: string;
+    title: string;
+    avatar: string;
+  };
+}) {
   return (
     <div className="flex-shrink-0 w-[420px] bg-[#2a2a2a] rounded-2xl p-8  border-white/10 border-[1px] ">
       <p className="text-white leading-6 text-base font-[400]  mb-8 min-h-[96px]">

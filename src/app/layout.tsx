@@ -1,8 +1,6 @@
-import Navbar from "@/_components/navbar/navbar";
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Manrope } from "next/font/google";
+import { Inter, Manrope, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Footer from "@/_components/sections/footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
