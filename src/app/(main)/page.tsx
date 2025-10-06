@@ -1,6 +1,7 @@
 import Container from "@/_components/layout/container";
 import AboutUs from "@/_components/sections/about-us";
 import BlackBgSections from "@/_components/sections/black-bg-sections";
+import ContactUs from "@/_components/sections/contact-us";
 import GallerySlider from "@/_components/sections/gallery-slider";
 import Growth from "@/_components/sections/growth";
 import HeroSection from "@/_components/sections/hero-section";
@@ -36,6 +37,7 @@ export default function page() {
       </Container>
       <BlackBgSections>
         <Tools />
+        <ContactUs />
       </BlackBgSections>
     </div>
   );

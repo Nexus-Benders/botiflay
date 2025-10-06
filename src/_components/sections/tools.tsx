@@ -78,12 +78,12 @@ function Tools() {
       <div className="max-w-5xl mx-auto text-center space-y-16">
         <SectionHeader hasBlackBg headline={<p>TOOLS</p>} />
 
-        <div className="bg-neutral-800/50 rounded-3xl  backdrop-blur-sm border border-neutral-700/50">
+        <div className="bg-[#282828] rounded-3xl  backdrop-blur-sm border border-neutral-700/50 max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {tools.map((tool, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-6 p-8 hover:bg-neutral-700/30 transition-all duration-300 group cursor-pointer
+                className={`flex items-center gap-6 p-8 py-6 hover:bg-neutral-700/30 transition-all duration-300 group cursor-pointer
                   ${index % 2 === 0 ? "md:border-r border-neutral-700/50" : ""}
                   ${
                     index < tools.length - 2
@@ -94,10 +94,10 @@ function Tools() {
               >
                 <figure>{tool.icon}</figure>
                 <div>
-                  <h3 className="text-xl font-semibold mb-1 group-hover:text-white transition-colors">
+                  <h3 className="text-[28px] text-start font-semibold mb-1 group-hover:text-white transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+                  <p className="text-[#F4F3F3] text-lg leading-7 font-normal">
                     {tool.description}
                   </p>
                 </div>
