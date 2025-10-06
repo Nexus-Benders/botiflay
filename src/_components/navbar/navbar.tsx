@@ -42,9 +42,17 @@ const DesktopNavbar = () => {
           ))}
         </ul>
       </div>
-      <button className="bg-gradient-to-b  text-[16px] font-bold leading-[18px] from-0% from-[#0D0D0D] to-100%  to-[#002E23] hover:bg-gradient-to-t hover:from-100% hover:from-[#002E23] hover:to-0% hover:to-[#0D0D0D] duration-300 cursor-pointer text-white  py-3.5 px-8 rounded-full">
-        Start Your Project
-      </button>
+      <div
+        data-property-1="Variant3"
+        className="px-8 py-3.5 bg-gradient-to-t from-emerald-950 to-stone-950 rounded-[30px]
+  shadow-[0px_2px_8px_rgba(0,0,0,0.15),inset_0px_1px_3.9px_rgba(255,255,255,0.25),inset_0px_4px_3.2px_rgba(255,255,255,0.25)]
+   outline-1 outline-offset-[-1px] outline-zinc-700
+  inline-flex justify-center items-center gap-2.5"
+      >
+        <div className="text-center justify-start text-zinc-100 text-base font-bold font-['Space_Grotesk'] leading-none">
+          Start Your Project
+        </div>
+      </div>
     </div>
   );
 };
