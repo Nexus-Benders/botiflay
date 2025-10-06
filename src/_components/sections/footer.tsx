@@ -42,7 +42,10 @@ export default function Footer() {
             <br />
             your website stand out?
           </div>
-          <div className="px-10 py-4 left-[210px] top-[190px] absolute bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_0px_rgba(255,255,255,0.15)] shadow-[0px_10px_10px_0px_rgba(0,0,0,0.10)] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.05)] shadow-[inset_0px_8px_10px_0px_rgba(246,249,255,0.20)]  outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3">
+          <div
+            className="px-10 py-4 left-[210px] top-[190px] absolute bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_rgba(255,255,255,0.15),0px_10px_10px_rgba(0,0,0,0.10),0px_4px_4px_rgba(0,0,0,0.05),inset_0px_8px_10px_rgba(246,249,255,0.20)]
+ outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3"
+          >
             <div className="text-center justify-start text-white text-lg font-bold font-['Space_Grotesk'] leading-none">
               Start A Project
             </div>
@@ -52,7 +55,7 @@ export default function Footer() {
               <div className="w-1.5 h-1.5 left-[9px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
               <div className="w-1.5 h-1.5 left-[1.33px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
               <div className="w-1.5 h-1.5 left-[9px] top-[9px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
-              <div className="w-1.5 h-1.5 left-[1.33px] top-[9px] absolute outline outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
+              <div className="w-1.5 h-1.5 left-[1.33px] top-[9px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
             </div>
             <div className="text-center justify-start text-white text-xs font-medium font-['Space_Grotesk'] leading-none">
               24/7 Spots Available
