@@ -8,10 +8,10 @@ export default function ContactUs() {
     "request-quote"
   );
   return (
-    <div className="flex flex-col space-y-12 justify-center items-center text-center">
+    <div className="flex  flex-col space-y-12 justify-center items-center text-center">
       <SectionHeader hasBlackBg headline={<p>CONTACT US</p>} />
 
-      <div className="flex flex-col   justify-center items-center w-full gap-14 pb-14">
+      <div className="flex flex-col  justify-center items-center w-full gap-14 pb-14">
         <div className="inline-flex text-nowrap w-fit mx-auto bg-[#1F1F1F] border border-[#2F2F2F] rounded-full shadow-sm cursor-pointer">
           <button
             onClick={() => setOption("book-a-call")}
