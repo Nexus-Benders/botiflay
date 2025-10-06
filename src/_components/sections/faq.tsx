@@ -17,7 +17,7 @@ function AccordionItem({
   onToggle,
 }: AccordionItemProps) {
   return (
-    <div className="bg-white rounded-2xl shadow-sm mb-4 overflow-hidden transition-all duration-300">
+    <div className="bg-white rounded-2xl shadow-sm drop-shadow mb-4 overflow-hidden transition-all duration-300">
       <button
         onClick={onToggle}
         className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200"
