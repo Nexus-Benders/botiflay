@@ -46,7 +46,7 @@ function HowWeWork() {
   ];
 
   return (
-    <div className="py-20 px-4">
+    <div className="py-12 sm:py-16 md:py-20 px-4">
       <div className="mx-auto">
         <div className="flex justify-center items-center text-center">
           <SectionHeader
@@ -55,7 +55,7 @@ function HowWeWork() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 py-8 sm:py-10 md:py-12">
           {phases.map((phase, index) => (
             <PhaseCard
               key={index}
@@ -80,21 +80,21 @@ interface PhaseCardProps {
 
 function PhaseCard({ phase, title, items }: PhaseCardProps) {
   return (
-    <div className="relative p-8 rounded-[24.5px] shadow-[0px_2px_8px_0px_#00000026,inset_0px_-1px_1.7px_0px_#0000002B] space-y-5 ">
-      <div className="space-y-5">
+    <div className="relative p-6 sm:p-8 rounded-[24.5px] shadow-[0px_2px_8px_0px_#00000026,inset_0px_-1px_1.7px_0px_#0000002B] space-y-4 sm:space-y-5">
+      <div className="space-y-4 sm:space-y-5">
         <p className="text-xs leading-3.5 text-[#434343] font-[500] border-[#F5F5F6] border-[1px] font-inter w-fit px-2 py-1 rounded-full">
           {phase}
         </p>
-        <h3 className="font-bold text-[34px]  leading-[44px] font-space-grotesk">
+        <h3 className="font-bold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[34px] leading-[1.3] font-space-grotesk">
           {title}
         </h3>
       </div>
 
-      <ul className="space-y-3">
+      <ul className="space-y-2 sm:space-y-3">
         {items.map((item, index) => (
-          <li key={index} className="flex items-center gap-3">
-            <FaRegCircle className="w-3 h-3  text-[#C4F82A] fill-[#C4F82A] flex-shrink-0" />
-            <span className="font-[400] text-[16px] leading-[26px] text-[#434343]">
+          <li key={index} className="flex items-center gap-2 sm:gap-3">
+            <FaRegCircle className="w-3 h-3 text-[#C4F82A] fill-[#C4F82A] flex-shrink-0" />
+            <span className="font-[400] text-[14px] sm:text-[16px] leading-[20px] sm:leading-[26px] text-[#434343]">
               {item}
             </span>
           </li>

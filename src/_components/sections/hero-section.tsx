@@ -32,7 +32,7 @@ export default function HeroSection() {
 
 function MiddleSection() {
   return (
-    <div className="w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16 gap-2">
+    <div className="w-full max-w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16 gap-2 px-4">
       <div className="border border-[#EDEDED] rounded-full min-w-[244px] flex flex-row gap-2 py-1.5 px-3.5">
         <figure>
           <Image
@@ -62,23 +62,23 @@ function MiddleSection() {
         </div>
       </div>
       <div className="flex flex-col gap-2 justify-center items-center">
-        <h1 className="font-bold text-[65px] leading-[65px] uppercase text-center">
+        <h1 className="font-bold text-[32px] sm:text-[40px] md:text-[50px] lg:text-[65px] leading-[1.1] uppercase text-center">
           CRAFTING PREMIUM DESIGNS & DEVELOPMENT
         </h1>
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-4">
           {optData.map((item) => (
             <div
               key={item.id}
-              className="flex flex-row gap-0 justify-start items-center"
+              className="flex flex-row gap-2 justify-start items-center"
             >
               <Image
                 src={"/assets/Tick.png"}
                 alt="tick"
                 width={100}
                 height={100}
-                className="size-5"
+                className="size-4 sm:size-5 flex-shrink-0"
               />
-              <p className="text-[16px] leading-[26px] font-[400] text-[#434343]">
+              <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[26px] font-[400] text-[#434343] whitespace-nowrap">
                 {item.label}
               </p>
             </div>
@@ -87,7 +87,7 @@ function MiddleSection() {
       </div>
       <div className="mt-8">
         <button
-          className="px-10 py-[14px] rounded-[30px] relative text-white font-medium text-base transition-all duration-300 
+          className="px-6 sm:px-10 py-[12px] sm:py-[14px] rounded-[30px] relative text-white font-medium text-sm sm:text-base transition-all duration-300 
          bg-gradient-to-b from-[#8B8B8B] to-50% to-[#252525] 
          cursor-pointer hover:opacity-90"
         >
@@ -100,7 +100,7 @@ function MiddleSection() {
 
 function HeroFooter() {
   return (
-    <div className="flex flex-row gap-2 absolute bottom-20 left-0 justify-between w-full">
+    <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 absolute bottom-8 sm:bottom-20 left-0 justify-between w-full px-4">
       <Collaboration />
       <Clutch />
     </div>
@@ -109,31 +109,31 @@ function HeroFooter() {
 
 function Collaboration() {
   return (
-    <section className="w-full  max-w-[320px] flex flex-col gap-[14px] ">
-      <h2 className="font-[500] text-[20px] leading-[24px] text-[#262626]">
+    <section className="w-full max-w-[320px] flex flex-col gap-[14px]">
+      <h2 className="font-[500] text-[16px] sm:text-[20px] leading-[20px] sm:leading-[24px] text-[#262626]">
         Collaboration With Us
       </h2>
 
       <div className="relative w-full overflow-hidden">
         {/* Left fog */}
-        <div className="absolute left-0 top-0 z-20 h-full w-24 pointer-events-none bg-gradient-to-r from-white via-white/70 to-transparent" />
+        <div className="absolute left-0 top-0 z-20 h-full w-12 sm:w-24 pointer-events-none bg-gradient-to-r from-white via-white/70 to-transparent" />
 
         {/* Right fog */}
-        <div className="absolute right-0 top-0 z-20 h-full w-24 pointer-events-none bg-gradient-to-l from-white via-white/70 to-transparent" />
+        <div className="absolute right-0 top-0 z-20 h-full w-12 sm:w-24 pointer-events-none bg-gradient-to-l from-white via-white/70 to-transparent" />
 
         {/* Sliding track */}
         <div className="flex w-max animate-infinite-scroll">
           {[...logos, ...logos].map((logo, idx) => (
             <div
               key={idx}
-              className="z-10 flex items-center justify-center flex-shrink-0 w-32 h-8 px-6 grayscale hover:grayscale-0 transition"
+              className="z-10 flex items-center justify-center flex-shrink-0 w-24 sm:w-32 h-6 sm:h-8 px-4 sm:px-6 grayscale hover:grayscale-0 transition"
             >
               <Image
                 width={300}
                 height={300}
                 src={logo.src}
                 alt={logo.alt}
-                className="max-h-12"
+                className="max-h-8 sm:max-h-12"
               />
             </div>
           ))}
@@ -145,13 +145,13 @@ function Collaboration() {
 
 function Clutch() {
   return (
-    <div>
+    <div className="flex justify-center sm:justify-end">
       <Image
         src={"/assets/Clutch.png"}
         alt="Clutch"
         width={300}
         height={300}
-        className="max-h-[32px] w-full"
+        className="max-h-[24px] sm:max-h-[32px] w-auto"
       />
     </div>
   );

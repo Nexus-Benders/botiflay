@@ -8,9 +8,9 @@ export default function SectionHeader({
   hasBlackBg?: boolean;
 }) {
   return (
-    <div className="font-space-grotesk flex flex-col gap-[8px]">
+    <div className="font-space-grotesk flex flex-col gap-2 sm:gap-[8px] px-4">
       <div
-        className={`font-bold text-[56px] leading-[70px] uppercase ${
+        className={`font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[56px] leading-[1.2] sm:leading-[1.25] uppercase ${
           hasBlackBg ? "text-white" : "text-[#262626]"
         }`}
       >
@@ -18,7 +18,7 @@ export default function SectionHeader({
       </div>
 
       <div
-        className={`text-[18px] leading-[32px] ${
+        className={`text-sm sm:text-base md:text-lg lg:text-[18px] leading-[1.6] sm:leading-[1.7] md:leading-[1.8] ${
           hasBlackBg ? "text-white" : "text-[#434343]"
         }`}
       >

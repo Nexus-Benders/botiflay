@@ -14,10 +14,10 @@ export default function PricingSection() {
   });
 
   return (
-    <div className="py-20 px-4 bg-[#F8F8F8]">
+    <div className="py-12 sm:py-16 md:py-20 px-4 bg-[#F8F8F8]">
       <div className="mx-auto max-w-7xl">
         {/* Header Section */}
-        <div className="text-center mb-12 max-w-[734px] mx-auto flex flex-col gap-12">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 max-w-[734px] mx-auto flex flex-col gap-6 sm:gap-8 md:gap-12">
           <SectionHeader
             headline={<p>PRICING PLAN</p>}
             description="Choose the perfect plan for your business. Whether you need a simple landing page or a full-scale custom website, we've got you covered!"
@@ -63,9 +63,9 @@ export default function PricingSection() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Card 1: Landing Page + Dev */}
-          <div className="bg-white  rounded-[30px] border border-[#F0F0F0] shadow-sm p-8">
+          <div className="bg-white rounded-[30px] border border-[#F0F0F0] shadow-sm p-6 sm:p-8">
             <div className="space-y-4">
               <CardTop
                 label="LANDING PAGE + DEV"
@@ -111,7 +111,7 @@ export default function PricingSection() {
           </div>
 
           {/* Card 2: Full Website */}
-          <div className="bg-white  rounded-[30px] border border-[#F0F0F0] shadow-sm p-8">
+          <div className="bg-white rounded-[30px] border border-[#F0F0F0] shadow-sm p-6 sm:p-8">
             <div className="space-y-6">
               <CardTop
                 label="FULL WEBSITE"
@@ -157,7 +157,7 @@ export default function PricingSection() {
           </div>
 
           {/* Card 3: Custom (Dark Card) */}
-          <div className="bg-gradient-to-b from-[#8B8B8B] to-[#252525] rounded-[30px] shadow-lg p-8 text-white h-fit">
+          <div className="bg-gradient-to-b from-[#8B8B8B] to-[#252525] rounded-[30px] shadow-lg p-6 sm:p-8 text-white h-fit">
             <div className="space-y-6">
               <div>
                 <h3 className="font-bold text-[24px] leading-[34px] text-white mb-3">

@@ -3,12 +3,12 @@ import SectionHeader from "../headers/section-header";
 
 export default function Growth() {
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-16 md:py-20">
       <div className="flex justify-center items-center text-center">
         <SectionHeader
           headline={
             <p>
-              Crafting Designs <br /> That Drive Growth
+              Crafting Designs <br className="hidden sm:block" /> That Drive Growth
             </p>
           }
           description="Creative solutions, seamless collaboration, and impactful results."
@@ -21,21 +21,21 @@ export default function Growth() {
 
 function Card() {
   return (
-    <div className="flex items-center justify-center  pt-9">
-      <div className=" w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="flex items-center justify-center pt-6 sm:pt-9">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
         {/* Growth Card */}
-        <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3 ">
-          <div className=" border rounded-2xl border-[#F5F5F6] p-5 bg-[#FFFFFF]">
+        <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3">
+          <div className="border rounded-2xl border-[#F5F5F6] p-4 sm:p-5 bg-[#FFFFFF]">
             <GradientText text="Growth" />
-            <div className="grid grid-cols-2  gap-8 mb-2 text-center py-4">
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-2 text-center py-3 sm:py-4">
               <div className="">
-                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B] font-manrope">
+                <div className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope">
                   80%
                 </div>
                 <CardParagraph text="Improved feedback" />
               </div>
               <div className="">
-                <div className="text-[32px] leading-[40px] font-semibold text-[#0B0B0B] font-manrope">
+                <div className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope">
                   56%
                 </div>
                 <CardParagraph text="New projects" />
@@ -56,19 +56,19 @@ function Card() {
         </div>
 
         {/* Conversion Focused Card */}
-        <div className="bg-[#FFFFFF]  rounded-2xl shadow-sm border border-gray-200 p-3 ">
-          <div className=" border rounded-2xl relative border-[#F5F5F6]  bg-[#FFFFFF] p-5">
+        <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3">
+          <div className="border rounded-2xl relative border-[#F5F5F6] bg-[#FFFFFF] p-4 sm:p-5">
             <GradientText text="Conversion Focused" />
 
-            <div className="flex  flex-col items-center  pt-4 space-y-4">
-              <div className="font-manrope font-semibold text-[40px] leading-[48px] text-[#0B0B0B] tracking-[-2%]">
+            <div className="flex flex-col items-center pt-3 sm:pt-4 space-y-3 sm:space-y-4">
+              <div className="font-manrope font-semibold text-[32px] sm:text-[36px] md:text-[40px] leading-[1.2] text-[#0B0B0B] tracking-[-2%]">
                 200%
               </div>
               <div className="w-full h-[2px] absolute top-[75%] bg-[#F5F5F6]" />
 
-              <div className="relative w-16 h-16 ">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lime-600 to-lime-600 " />
-                <div className="absolute inset-5 rounded-full bg-white"></div>
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-lime-600 to-lime-600" />
+                <div className="absolute inset-3 sm:inset-4 md:inset-5 rounded-full bg-white"></div>
               </div>
             </div>
           </div>
@@ -81,12 +81,12 @@ function Card() {
           />
         </div>
 
-        <div className="bg-[#FFFFFF]  rounded-2xl shadow-sm border border-gray-200 p-3 ">
-          <div className=" border rounded-2xl relative border-[#F5F5F6]  bg-[#FFFFFF] p-5 space-y-4">
+        <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3">
+          <div className="border rounded-2xl relative border-[#F5F5F6] bg-[#FFFFFF] p-4 sm:p-5 space-y-3 sm:space-y-4">
             <GradientText text="Market Analytics" />
             <CardParagraph text="Stats will speak for itself" />
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <CardStats type="User Rating" value="80%" />
               <CardStats type="Leads" value="150%" />
             </div>
