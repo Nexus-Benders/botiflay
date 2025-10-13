@@ -51,9 +51,9 @@ export default function OurWork() {
   ];
 
   return (
-    <div className="py-12 flex flex-col justify-center items-center text-center">
+    <div className="py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center text-center">
       <SectionHeader headline={"Our Work"} hasBlackBg />
-      <div className="flex flex-col gap-4 py-12">
+      <div className="flex flex-col gap-6 sm:gap-8 py-8 sm:py-10 md:py-12 w-full max-w-7xl mx-auto px-4">
         {cardData?.map((item, idx) => (
           <ProjectCard key={item.id} {...item} isReveresed={idx % 2 === 0} />
         ))}
@@ -82,50 +82,95 @@ function ProjectCard({
   isReveresed: boolean;
 }) {
   return (
-    <div
-      className={`bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl grid  ${
-        isReveresed ? "grid-cols-[36%_63%]" : "grid-cols-[63%_36%]"
-      } gap-6 p-8 `}
-    >
-      <figure className={`w-full ${isReveresed ? "order-2" : "order-1"}`}>
-        <Image src={`/work/${image}`} alt="" width={1000} height={1000} />
-      </figure>
-      <div
-        className={`bg-[#2D2D2D] text-start rounded-2xl p-8 space-y-8 ${
-          isReveresed ? "order-1" : "order-2"
-        }`}
-      >
-        <div className="space-y-6">
-          <h2 className="text-[34px] leading-[44px]  font-bold ">{title}</h2>
-          <p className="font-[400] text-lg leading-7">{description}</p>
-        </div>
-
-        {/* Info Section */}
-        <div className="space-y-8">
-          <div className="space-y-3 text-white font-[300] text-sm leading-7 tracking-[-2%]">
-            <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
-              <span>Client</span>
-              <span>{client}</span>
-            </div>
-            <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
-              <span>Role</span>
-              <span>{role}</span>
-            </div>
-            <div className="flex justify-between pb-2">
-              <span>Client Rating</span>
-              <span>{clientRating}</span>
-            </div>
+    <div className="bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl overflow-hidden">
+      {/* Mobile Layout */}
+      <div className="lg:hidden">
+        <figure className="w-full">
+          <Image src={`/work/${image}`} alt={title} width={1000} height={1000} className="w-full h-auto" />
+        </figure>
+        <div className="bg-[#2D2D2D] p-6 space-y-6">
+          <div className="space-y-4">
+            <h2 className="text-2xl sm:text-3xl leading-[1.3] font-bold">{title}</h2>
+            <p className="font-[400] text-sm sm:text-base leading-[1.6] text-gray-300">{description}</p>
           </div>
 
-          <div className="flex flex-wrap gap-3 ">
-            {tags?.map((tag) => (
-              <span
-                key={tag}
-                className="bg-[#FFFFFF26] font-[14px] leading-5 tracking-tight text-gray-300 px-4 py-2 rounded-full text-sm"
-              >
-                {tag}
-              </span>
-            ))}
+          {/* Info Section */}
+          <div className="space-y-6">
+            <div className="space-y-3 text-white font-[300] text-sm leading-6 tracking-[-2%]">
+              <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+                <span>Client</span>
+                <span>{client}</span>
+              </div>
+              <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+                <span>Role</span>
+                <span>{role}</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span>Client Rating</span>
+                <span>{clientRating}</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {tags?.map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-[#FFFFFF26] font-[14px] leading-5 tracking-tight text-gray-300 px-3 py-1.5 rounded-full text-xs sm:text-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <div
+        className={`hidden lg:grid ${
+          isReveresed ? "grid-cols-[36%_63%]" : "grid-cols-[63%_36%]"
+        } gap-6 p-8`}
+      >
+        <figure className={`w-full ${isReveresed ? "order-2" : "order-1"}`}>
+          <Image src={`/work/${image}`} alt={title} width={1000} height={1000} />
+        </figure>
+        <div
+          className={`bg-[#2D2D2D] text-start rounded-2xl p-8 space-y-8 ${
+            isReveresed ? "order-1" : "order-2"
+          }`}
+        >
+          <div className="space-y-6">
+            <h2 className="text-[34px] leading-[44px] font-bold">{title}</h2>
+            <p className="font-[400] text-lg leading-7">{description}</p>
+          </div>
+
+          {/* Info Section */}
+          <div className="space-y-8">
+            <div className="space-y-3 text-white font-[300] text-sm leading-7 tracking-[-2%]">
+              <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+                <span>Client</span>
+                <span>{client}</span>
+              </div>
+              <div className="flex justify-between border-b-[1px] border-[#ffffff54] pb-2">
+                <span>Role</span>
+                <span>{role}</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span>Client Rating</span>
+                <span>{clientRating}</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {tags?.map((tag) => (
+                <span
+                  key={tag}
+                  className="bg-[#FFFFFF26] font-[14px] leading-5 tracking-tight text-gray-300 px-4 py-2 rounded-full text-sm"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
