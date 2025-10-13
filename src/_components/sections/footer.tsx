@@ -35,7 +35,7 @@ export default function Footer() {
     <div
       className={`bg-[url("/assets/footer.png")] bg-cover bg-center bg-no-repeat lg:min-h-[550px]  relative w-full flex justify-center items-center`}
     >
-      <div className="flex justify-center items-center h-full">
+      <div className="lg:flex justify-center items-center h-full hidden">
         <div className="w-[627px] h-60 relative">
           <div className="left-0 top-[38px] absolute text-center justify-start text-white text-5xl font-bold font-['Space_Grotesk'] uppercase leading-[60px]">
             Ready to make
