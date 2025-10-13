@@ -64,70 +64,144 @@ const DesktopNavbar = () => {
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
+  const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "Work", href: "/work" },
+    { label: "Service", href: "/service" },
+    { label: "Process", href: "/process" },
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ];
+
   return (
-    <div className="lg:hidden flex flex-row justify-between items-center  w-full ">
-      {!isOpen && (
-        <div className="p-6 w-full flex flex-row justify-between items-center">
-          <Link href={"/"}>
-            <Image
-              src="/logo.png"
-              alt="Botiflay logo"
-              width={100}
-              height={100}
+    <div className="lg:hidden w-full relative">
+      {/* Header with logo and menu button */}
+      <div className="p-6 w-full flex flex-row justify-between items-center">
+        <Link href={"/"}>
+          <Image
+            src="/logo.png"
+            alt="Botiflay logo"
+            width={100}
+            height={100}
+          />
+        </Link>
+        
+        {/* Animated Menu Button */}
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="relative w-8 h-8 flex items-center justify-center transition-all duration-300 ease-out"
+        >
+          <div className="relative w-6 h-6">
+            {/* Top line */}
+            <span 
+              className={`absolute top-1 left-0 w-6 h-0.5 bg-zinc-900 transition-all duration-300 ease-out ${
+                isOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
             />
-          </Link>
-          <MenuIcon onClick={() => setIsOpen(!isOpen)} />
-        </div>
-      )}
-      {isOpen && (
-        <div className="w-screen pb-12 bg-zinc-800 shadow-[0px_4px_12.100000381469727px_0px_rgba(17,31,59,0.08)] backdrop-blur-md inline-flex flex-col justify-start items-center gap-8 p-6">
-          <div className="flex flex-row justify-between items-center w-full">
-            <Image
-              src="/assets/logo-white.png"
-              alt="Botiflay logo"
-              width={100}
-              height={100}
+            {/* Middle line */}
+            <span 
+              className={`absolute top-3 left-0 w-6 h-0.5 bg-zinc-900 transition-all duration-300 ease-out ${
+                isOpen ? 'opacity-0 scale-0' : ''
+              }`}
             />
-            <XIcon className="text-white" onClick={() => setIsOpen(!isOpen)} />
+            {/* Bottom line */}
+            <span 
+              className={`absolute top-5 left-0 w-6 h-0.5 bg-zinc-900 transition-all duration-300 ease-out ${
+                isOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
           </div>
-          <div className="self-stretch px-4 flex flex-col justify-start items-center gap-12">
-            <div className="self-stretch flex flex-col justify-center items-start gap-4">
-              <div className="flex flex-col justify-center items-start gap-4">
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Home
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 z-40 transition-all duration-500 ease-out ${
+          isOpen 
+            ? 'opacity-100 pointer-events-auto' 
+            : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {/* Backdrop */}
+        <div 
+          className={`absolute inset-0 bg-black transition-opacity duration-500 ${
+            isOpen ? 'opacity-60' : 'opacity-0'
+          }`}
+          onClick={() => setIsOpen(false)}
+        />
+        
+        {/* Menu Panel */}
+        <div 
+          className={`absolute top-0 left-0 right-0 bg-zinc-800 shadow-[0px_4px_12.100000381469727px_0px_rgba(17,31,59,0.08)] backdrop-blur-md transition-transform duration-500 ease-out ${
+            isOpen 
+              ? 'translate-y-0' 
+              : '-translate-y-full'
+          }`}
+        >
+          <div className="pb-12 flex flex-col justify-start items-center gap-8 p-6">
+            {/* Header */}
+            <div className="flex flex-row justify-between items-center w-full">
+              <Image
+                src="/assets/logo-white.png"
+                alt="Botiflay logo"
+                width={100}
+                height={100}
+              />
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="w-8 h-8 flex items-center justify-center"
+              >
+                <XIcon className="text-white w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Menu Items */}
+            <div className="self-stretch px-4 flex flex-col justify-start items-center gap-12">
+              <div className="self-stretch flex flex-col justify-center items-start gap-4">
+                <div className="flex flex-col justify-center items-start gap-4">
+                  {menuItems.map((item, index) => (
+                    <Link 
+                      key={item.label}
+                      href={item.href}
+                      className={`justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal transition-all duration-500 ease-out hover:text-[#BDED5B] hover:translate-x-2 ${
+                        isOpen 
+                          ? 'opacity-100 translate-y-0' 
+                          : 'opacity-0 translate-y-4'
+                      }`}
+                      style={{
+                        transitionDelay: isOpen ? `${index * 100 + 200}ms` : `${(menuItems.length - index - 1) * 50}ms`
+                      }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Work
-                </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Service
-                </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Process
-                </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  About
-                </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Contact
-                </div>
-                <div className="justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal">
-                  Process
+              </div>
+
+              {/* CTA Button */}
+              <div
+                className={`self-stretch px-6 py-3 bg-gradient-to-b from-zinc-700/0 to-gray-400/60 rounded-[100px] 
+                  shadow-[0px_10px_40px_0px_rgba(255,255,255,0.15),_0px_10px_10px_0px_rgba(0,0,0,0.10),_0px_4px_4px_0px_rgba(0,0,0,0.05),_inset_0px_8px_10px_0px_rgba(246,249,255,0.20)] 
+                    outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3
+                    transition-all duration-500 ease-out hover:scale-105 hover:shadow-[0px_15px_50px_0px_rgba(255,255,255,0.25),_0px_15px_15px_0px_rgba(0,0,0,0.15)] ${
+                      isOpen 
+                        ? 'opacity-100 translate-y-0' 
+                        : 'opacity-0 translate-y-4'
+                    }`}
+                style={{
+                  transitionDelay: isOpen ? `${menuItems.length * 100 + 400}ms` : '0ms'
+                }}
+              >
+                <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
+                  Start A Project
                 </div>
               </div>
             </div>
-            <div
-              className="self-stretch px-6 py-3 bg-gradient-to-b from-zinc-700/0 to-gray-400/60 rounded-[100px] 
-                shadow-[0px_10px_40px_0px_rgba(255,255,255,0.15),_0px_10px_10px_0px_rgba(0,0,0,0.10),_0px_4px_4px_0px_rgba(0,0,0,0.05),_inset_0px_8px_10px_0px_rgba(246,249,255,0.20)] 
-                  outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3"
-            >
-              <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
-                Start A Project
-              </div>
-            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
