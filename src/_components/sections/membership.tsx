@@ -11,35 +11,35 @@ import BenefitCard from "./BenefitCard";
 
 const benefits = [
   {
-    icon: "/member/icon.png",
+    icon: "/member/Icon.png",
     title: "DESIGN PANEL",
     description: "Add as many design requests to your board as you want.",
   },
   {
-    icon: "/member/icon-1.png",
+    icon: "/member/Icon-1.png",
     title: "QUICK DELIVERY",
     description:
       "Receive your design within a few days on average, one at a time.",
   },
   {
-    icon: "/member/icon-2.png",
+    icon: "/member/Icon-2.png",
     title: "FIXED MONTHLY RATE",
     description: "No surprises! Pay the same fixed price each month.",
   },
   {
-    icon: "/member/icon-3.png",
+    icon: "/member/Icon-3.png",
     title: "UNLIMITED REVISIONS",
     description:
       "Change it, swap it, until it's just right — as many times as you want",
   },
   {
-    icon: "/member/icon-4.png",
+    icon: "/member/Icon-4.png",
     title: "FLEXIBLE & SCALABLE",
     description:
       "Get more or less, pause or stop your plan anytime — you're in charge",
   },
   {
-    icon: "/member/icon-5.png",
+    icon: "/member/Icon-5.png",
     title: "PAUSE OR CANCEL ANYTIME",
     description:
       "Flexibility at your fingertips—pause or cancel your subscription anytime.",
