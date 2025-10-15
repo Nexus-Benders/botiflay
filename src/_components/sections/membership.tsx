@@ -1,36 +1,48 @@
-import { Layers, Clock, Calendar, RotateCcw, Maximize2, PauseCircle } from 'lucide-react';
-import BenefitCard from './BenefitCard';
+import {
+  Layers,
+  Clock,
+  Calendar,
+  RotateCcw,
+  Maximize2,
+  PauseCircle,
+} from "lucide-react";
+
+import BenefitCard from "./BenefitCard";
 
 const benefits = [
   {
-    icon: Layers,
-    title: 'DESIGN PANEL',
-    description: 'Add as many design requests to your board as you want.',
+    icon: "/member/icon.png",
+    title: "DESIGN PANEL",
+    description: "Add as many design requests to your board as you want.",
   },
   {
-    icon: Clock,
-    title: 'QUICK DELIVERY',
-    description: 'Receive your design within a few days on average, one at a time.',
+    icon: "/member/icon-1.png",
+    title: "QUICK DELIVERY",
+    description:
+      "Receive your design within a few days on average, one at a time.",
   },
   {
-    icon: Calendar,
-    title: 'FIXED MONTHLY RATE',
-    description: 'No surprises! Pay the same fixed price each month.',
+    icon: "/member/icon-2.png",
+    title: "FIXED MONTHLY RATE",
+    description: "No surprises! Pay the same fixed price each month.",
   },
   {
-    icon: RotateCcw,
-    title: 'UNLIMITED REVISIONS',
-    description: "Change it, swap it, until it's just right — as many times as you want",
+    icon: "/member/icon-3.png",
+    title: "UNLIMITED REVISIONS",
+    description:
+      "Change it, swap it, until it's just right — as many times as you want",
   },
   {
-    icon: Maximize2,
-    title: 'FLEXIBLE & SCALABLE',
-    description: "Get more or less, pause or stop your plan anytime — you're in charge",
+    icon: "/member/icon-4.png",
+    title: "FLEXIBLE & SCALABLE",
+    description:
+      "Get more or less, pause or stop your plan anytime — you're in charge",
   },
   {
-    icon: PauseCircle,
-    title: 'PAUSE OR CANCEL ANYTIME',
-    description: 'Flexibility at your fingertips—pause or cancel your subscription anytime.',
+    icon: "/member/icon-5.png",
+    title: "PAUSE OR CANCEL ANYTIME",
+    description:
+      "Flexibility at your fingertips—pause or cancel your subscription anytime.",
   },
 ];
 
@@ -43,8 +55,9 @@ export default function MembershipBenefits() {
             MEMBERSHIP BENEFITS
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-            Choose the perfect plan for your business. Whether you need a simple landing
-            page or a full-scale custom website, we&apos;ve got you covered!
+            Choose the perfect plan for your business. Whether you need a simple
+            landing page or a full-scale custom website, we&apos;ve got you
+            covered!
           </p>
         </div>
 

@@ -32,9 +32,9 @@ export default function page() {
         <OurWork />
         <Testimonial />
       </BlackBgSections>
-      <PricingSection />
       <Container>
         <MembershipBenefits />
+        <PricingSection />
       </Container>
       <BlackBgSections>
         <Tools />
