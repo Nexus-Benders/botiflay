@@ -93,7 +93,7 @@ function Tools() {
                 `}
               >
                 <figure>{tool.icon}</figure>
-                <div>
+                <div className="text-start">
                   <h3 className="text-[28px] text-start font-semibold mb-1 group-hover:text-white transition-colors">
                     {tool.title}
                   </h3>

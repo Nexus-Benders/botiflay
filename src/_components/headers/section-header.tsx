@@ -3,7 +3,10 @@ import React from "react";
 export default function SectionHeader({
   headline,
   description = (
-    <p>Creative solutions, seamless collaboration, and impactful results.</p>
+    <p>
+      Creative solutions, seamless <br className="block lg:hidden" />{" "}
+      collaboration, and impactful results.
+    </p>
   ),
   hasBlackBg = false,
 }: {
