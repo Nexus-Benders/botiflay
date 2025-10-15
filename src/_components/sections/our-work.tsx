@@ -84,14 +84,24 @@ function ProjectCard({
   return (
     <div className="bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl overflow-hidden">
       {/* Mobile Layout */}
-      <div className="lg:hidden">
+      <div className="lg:hidden text-start">
         <figure className="w-full">
-          <Image src={`/work/${image}`} alt={title} width={1000} height={1000} className="w-full h-auto" />
+          <Image
+            src={`/work/${image}`}
+            alt={title}
+            width={1000}
+            height={1000}
+            className="w-full h-auto"
+          />
         </figure>
         <div className="bg-[#2D2D2D] p-6 space-y-6">
           <div className="space-y-4">
-            <h2 className="text-2xl sm:text-3xl leading-[1.3] font-bold">{title}</h2>
-            <p className="font-[400] text-sm sm:text-base leading-[1.6] text-gray-300">{description}</p>
+            <h2 className="text-2xl sm:text-3xl leading-[1.3] font-bold">
+              {title}
+            </h2>
+            <p className="font-[400] text-sm sm:text-base leading-[1.6] text-gray-300">
+              {description}
+            </p>
           </div>
 
           {/* Info Section */}
@@ -111,7 +121,7 @@ function ProjectCard({
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 justify-center items-center">
               {tags?.map((tag) => (
                 <span
                   key={tag}
@@ -132,7 +142,12 @@ function ProjectCard({
         } gap-6 p-8`}
       >
         <figure className={`w-full ${isReveresed ? "order-2" : "order-1"}`}>
-          <Image src={`/work/${image}`} alt={title} width={1000} height={1000} />
+          <Image
+            src={`/work/${image}`}
+            alt={title}
+            width={1000}
+            height={1000}
+          />
         </figure>
         <div
           className={`bg-[#2D2D2D] text-start rounded-2xl p-8 space-y-8 ${
