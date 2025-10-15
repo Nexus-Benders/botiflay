@@ -23,7 +23,7 @@ const logos = [
 
 export default function HeroSection() {
   return (
-    <div className="h-dvh flex justify-center items-center relative">
+    <div className="max-h-dvh h-dvh grid grid-rows-[60%_30%] lg:grid-rows-[80%_20%]">
       <MiddleSection />
       <HeroFooter />
     </div>
@@ -32,7 +32,7 @@ export default function HeroSection() {
 
 function MiddleSection() {
   return (
-    <div className="w-full max-w-[854px] mx-auto flex justify-center items-center flex-col -translate-y-16 gap-2 px-4">
+    <div className="w-full max-w-[854px]   mx-auto flex justify-center items-center flex-col  gap-2 px-4 space-y-2">
       <div className="border border-[#EDEDED] rounded-full min-w-[244px] flex flex-row gap-2 py-1.5 px-3.5">
         <figure>
           <Image
@@ -40,7 +40,7 @@ function MiddleSection() {
             alt="avater-group"
             width={400}
             height={400}
-            className="size-8 w-fit"
+            className=" size-7 lg:size-8 w-fit"
             quality={100}
             priority
           />
@@ -54,18 +54,19 @@ function MiddleSection() {
               height={100}
               quality={100}
               priority
+              className=" h-3 lg:h-6 w-auto"
             />
           </figure>
-          <p className="font-inter font-[500] text-[12px] leading-[14px]">
+          <p className="font-inter font-[500] text-[12px] lg:text-[14px] leading-[14px] lg:leading-[16px]">
             150+ businesses scaled
           </p>
         </div>
       </div>
       <div className="flex flex-col gap-2 justify-center items-center">
-        <h1 className="font-bold text-[32px] sm:text-[40px] md:text-[50px] lg:text-[65px] leading-[1.1] uppercase text-center">
+        <h1 className="font-bold text-4xl sm:text-[40px] md:text-[50px] lg:text-[65px] leading-[1.1] uppercase text-center">
           CRAFTING PREMIUM DESIGNS & DEVELOPMENT
         </h1>
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-4">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 mt-4 justify-center items-center">
           {optData.map((item) => (
             <div
               key={item.id}
@@ -85,9 +86,9 @@ function MiddleSection() {
           ))}
         </div>
       </div>
-      <div className="mt-8">
+      <div className="mt-8 w-full lg:w-fit">
         <button
-          className="px-6 sm:px-10 py-[12px] sm:py-[14px] rounded-[30px] relative text-white font-medium text-sm sm:text-base transition-all duration-300 
+          className="px-6 w-full lg:w-fit sm:px-10 py-[12px] sm:py-[14px] rounded-[30px] relative text-white font-medium text-sm sm:text-base transition-all duration-300 
          bg-gradient-to-b from-[#8B8B8B] to-50% to-[#252525] 
          cursor-pointer hover:opacity-90"
         >
@@ -100,7 +101,7 @@ function MiddleSection() {
 
 function HeroFooter() {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 sm:gap-2 absolute bottom-8 sm:bottom-20 left-0 justify-between w-full px-4">
+    <div className="  flex flex-col sm:flex-row gap-4 sm:gap-2  lg:justify-between w-full px-4 items-center justify-center">
       <Collaboration />
       <Clutch />
     </div>
@@ -110,7 +111,7 @@ function HeroFooter() {
 function Collaboration() {
   return (
     <section className="w-full max-w-[320px] flex flex-col gap-[14px]">
-      <h2 className="font-[500] text-[16px] sm:text-[20px] leading-[20px] sm:leading-[24px] text-[#262626]">
+      <h2 className="font-[500] text-center lg:text-start text-[16px] sm:text-[20px] leading-[20px] sm:leading-[24px] text-[#262626]">
         Collaboration With Us
       </h2>
 
@@ -145,13 +146,13 @@ function Collaboration() {
 
 function Clutch() {
   return (
-    <div className="flex justify-center sm:justify-end">
+    <div className="flex justify-center">
       <Image
         src={"/assets/Clutch.png"}
         alt="Clutch"
         width={300}
         height={300}
-        className="max-h-[24px] sm:max-h-[32px] w-auto"
+        className="max-h-[28px] sm:max-h-[32px] w-auto"
       />
     </div>
   );
