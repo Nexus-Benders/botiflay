@@ -148,7 +148,7 @@ function Clutch() {
   return (
     <div className="flex justify-center">
       <Image
-        src={"/assets/Clutch.png"}
+        src={"/assets/clutch.png"}
         alt="Clutch"
         width={300}
         height={300}
