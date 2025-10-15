@@ -8,7 +8,7 @@ function HowWeWork() {
       phase: "Discovery Phase",
       title: (
         <p>
-          Research and <br /> Strategy
+          Research and <br className="hidden lg:block" /> Strategy
         </p>
       ),
       items: [
@@ -24,7 +24,7 @@ function HowWeWork() {
       phase: "Ideation Phase",
       title: (
         <p>
-          Design and <br /> Prototyping
+          Design and <br className="hidden lg:block" /> Prototyping
         </p>
       ),
       items: ["Wireframing", "UI Design", "Prototyping", "Usability Testing"],
@@ -33,7 +33,7 @@ function HowWeWork() {
       phase: "Implementation Phase",
       title: (
         <p>
-          Development <br /> Handoff & Testing
+          Development <br className="hidden lg:block" /> Handoff & Testing
         </p>
       ),
       items: [
