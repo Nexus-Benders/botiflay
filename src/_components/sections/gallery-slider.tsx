@@ -70,7 +70,7 @@ const Slider = () => {
                 height={250}
                 src={slide.src}
                 alt={slide.alt}
-                className="w-[420px] h-[300px] object-cover rounded-xl shadow-lg  transition-transform duration-300"
+                className="w-72 h-44 lg:w-96 lg:h-72 object-cover rounded-xl shadow-lg  transition-transform duration-300"
               />
             </div>
           ))}
@@ -88,7 +88,7 @@ const Slider = () => {
                 height={250}
                 src={slide.src}
                 alt={slide.alt}
-                className="w-[420px] h-[300px] object-cover rounded-xl shadow-lg  transition-transform duration-300"
+                className="w-72 h-44 lg:w-96 lg:h-72 object-cover rounded-xl shadow-lg  transition-transform duration-300"
               />
             </div>
           ))}
