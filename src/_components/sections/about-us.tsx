@@ -4,7 +4,7 @@ import React from "react";
 export default function AboutUs() {
   return (
     <div className="py-16 sm:py-20 md:py-24 lg:py-28 flex flex-col gap-8 sm:gap-12 md:gap-16 lg:gap-[72px]">
-      <div className="font-bold flex flex-col gap-4 sm:gap-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-[1100px] mx-auto text-center leading-[1.2] tracking-[-4%] px-4 text-start lg:text-center">
+      <div className="font-bold flex flex-col gap-4 sm:gap-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-[1100px] mx-auto leading-[1.2] tracking-[-4%] px-4 text-start lg:text-center">
         <p className="text-[#163E59] ">
           Ever wonder why some startups shine while others fade? The secret is
           in the design.

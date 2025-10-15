@@ -8,7 +8,7 @@ export default function Growth() {
         <SectionHeader
           headline={
             <p>
-              Crafting Designs <br className="hidden sm:block" /> That Drive Growth
+              Crafting Designs <br /> That Drive Growth
             </p>
           }
           description="Creative solutions, seamless collaboration, and impactful results."
