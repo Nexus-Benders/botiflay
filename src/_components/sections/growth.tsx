@@ -49,7 +49,7 @@ function Card() {
             }
             title={
               <span>
-                Success as a <br /> Service
+                Success as a <br className="hidden lg:block" /> Service
               </span>
             }
           />
@@ -87,7 +87,7 @@ function Card() {
             <CardParagraph text="Stats will speak for itself" />
 
             <div className="space-y-2 sm:space-y-3">
-              <CardStats type="User Rating" value="80%" />
+              <CardStats type="User retention" value="80%" />
               <CardStats type="Leads" value="150%" />
             </div>
           </div>
@@ -122,8 +122,8 @@ function CardParagraph({ text }: { text: string }) {
 function CardStats({ type, value }: { type: string; value: string }) {
   return (
     <div>
-      <div className=" grid grid-cols-[30%_50%_10%] items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
-        <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
+      <div className=" grid grid-cols-[40%_30%_10%] items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
+        <span className="text-[16px] text-nowrap font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
           {type}
         </span>
         <div className="w-full bg-[#EAF8CB] rounded-full h-2">
@@ -143,7 +143,7 @@ function CardStats({ type, value }: { type: string; value: string }) {
 
 function CardHeading({ text }: { text: React.ReactNode }) {
   return (
-    <h3 className="text-[34px] leading-[44px] font-bold text-[#2F2F2F] ">
+    <h3 className=" text-2xl lg:text-[34px]  leading-[44px] font-bold text-[#2F2F2F] ">
       {text}
     </h3>
   );
