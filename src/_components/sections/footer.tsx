@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="px-2 py-1.5 left-[235px] top-0 absolute bg-white/5 rounded-[30px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.15)] inset-shadow-[inset_0px_-1px_1.7000000476837158px_0px_rgba(0,0,0,0.17)]  outline-1 outline-offset-[-1px] outline-white/10 inline-flex justify-center items-center gap-1.5">
-            <div className="w-4 h-4 relative overflow-hidden">
+            <div className="w-4 h-4 relative overflow-hidden *:rounded-[1.5px]">
               <div className="w-1.5 h-1.5 left-[9px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
               <div className="w-1.5 h-1.5 left-[1.33px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
               <div className="w-1.5 h-1.5 left-[9px] top-[9px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
@@ -67,19 +67,8 @@ export default function Footer() {
 
       {/* Mobile Content */}
       <div className="lg:hidden flex flex-col justify-center items-center text-center px-4 py-8">
-        <div className="mb-6">
-          <div className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-['Space_Grotesk'] uppercase leading-[1.2] mb-6">
-            Ready to make your website stand out?
-          </div>
-          <div className="px-6 py-3 bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_rgba(255,255,255,0.15),0px_10px_10px_rgba(0,0,0,0.10),0px_4px_4px_rgba(0,0,0,0.05),inset_0px_8px_10px_rgba(246,249,255,0.20)]
- outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3">
-            <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
-              Start A Project
-            </div>
-          </div>
-        </div>
-        <div className="px-2 py-1.5 bg-white/5 rounded-[30px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.15)] inset-shadow-[inset_0px_-1px_1.7000000476837158px_0px_rgba(0,0,0,0.17)] outline-1 outline-offset-[-1px] outline-white/10 inline-flex justify-center items-center gap-1.5">
-          <div className="w-4 h-4 relative overflow-hidden">
+        <div className="px-2 mb-4 py-1.5 bg-white/5 rounded-[30px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.15)] inset-shadow-[inset_0px_-1px_1.7000000476837158px_0px_rgba(0,0,0,0.17)] outline-1 outline-offset-[-1px] outline-white/10 inline-flex justify-center items-center gap-1.5">
+          <div className="w-4 h-4 relative overflow-hidden *:rounded-[1.5px]">
             <div className="w-1.5 h-1.5 left-[9px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
             <div className="w-1.5 h-1.5 left-[1.33px] top-[1.33px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
             <div className="w-1.5 h-1.5 left-[9px] top-[9px] absolute  outline-[1.50px] outline-offset-[-0.75px] outline-lime-500" />
@@ -87,6 +76,19 @@ export default function Footer() {
           </div>
           <div className="text-center justify-start text-white text-xs font-medium font-['Space_Grotesk'] leading-none">
             24/7 Spots Available
+          </div>
+        </div>
+        <div className="mb-6">
+          <div className="text-white text-2xl sm:text-3xl md:text-4xl font-bold font-['Space_Grotesk'] uppercase leading-[1.2] mb-6">
+            Ready to make your <br /> website stand out?
+          </div>
+          <div
+            className="px-6 py-3 bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_rgba(255,255,255,0.15),0px_10px_10px_rgba(0,0,0,0.10),0px_4px_4px_rgba(0,0,0,0.05),inset_0px_8px_10px_rgba(246,249,255,0.20)]
+ outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3"
+          >
+            <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
+              Start A Project
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +101,13 @@ export default function Footer() {
         <div className="flex flex-row gap-2 sm:gap-3 w-full justify-center order-1 sm:order-2">
           {socialLinks.map((link) => (
             <Link href={link.href} key={link.id}>
-              <Image src={link.icon} alt={link.label} width={40} height={40} className="sm:w-14 sm:h-14" />
+              <Image
+                src={link.icon}
+                alt={link.label}
+                width={40}
+                height={40}
+                className="sm:w-14 sm:h-14"
+              />
             </Link>
           ))}
         </div>
