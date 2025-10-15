@@ -40,7 +40,7 @@ function MiddleSection() {
             alt="avater-group"
             width={400}
             height={400}
-            className=" size-7 lg:size-8 w-fit"
+            className=" h-7 lg:h-12  w-full"
             quality={100}
             priority
           />
@@ -54,7 +54,7 @@ function MiddleSection() {
               height={100}
               quality={100}
               priority
-              className=" h-3 lg:h-6 w-auto"
+              className=" h-3 lg:h-4 w-auto"
             />
           </figure>
           <p className="font-inter font-[500] text-[12px] lg:text-[14px] leading-[14px] lg:leading-[16px]">
