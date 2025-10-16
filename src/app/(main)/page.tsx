@@ -23,13 +23,21 @@ export default function page() {
       </Container>
       <GallerySlider />
       <Container>
-        <AboutUs />
+        <div id="about">
+          <AboutUs />
+        </div>
         <Growth />
-        <HowWeWork />
+        <div id="process">
+          <HowWeWork />
+        </div>
       </Container>
       <BlackBgSections>
-        <OurService />
-        <OurWork />
+        <div id="service">
+          <OurService />
+        </div>
+        <div id="work">
+          <OurWork />
+        </div>
         <Testimonial />
       </BlackBgSections>
       <Container>
@@ -38,7 +46,9 @@ export default function page() {
       </Container>
       <BlackBgSections>
         <Tools />
-        <ContactUs />
+        <div id="contact">
+          <ContactUs />
+        </div>
       </BlackBgSections>
       <Container>
         <FAQ />

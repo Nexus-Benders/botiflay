@@ -20,6 +20,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 100; // Account for sticky navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="w-full ">
       <div
@@ -27,14 +38,20 @@ export default function Navbar() {
           isSticky ? "fixed top-0" : "absolute top-0"
         }`}
       >
-        <DesktopNavbar isSticky={isSticky} />
+        <DesktopNavbar isSticky={isSticky} scrollToSection={scrollToSection} />
       </div>
-      <MobileNavbar isSticky={isSticky} />
+      <MobileNavbar isSticky={isSticky} scrollToSection={scrollToSection} />
     </div>
   );
 }
 
-const DesktopNavbar = ({ isSticky }: { isSticky: boolean }) => {
+const DesktopNavbar = ({
+  isSticky,
+  scrollToSection,
+}: {
+  isSticky: boolean;
+  scrollToSection: (sectionId: string) => void;
+}) => {
   return (
     <div
       className={`lg:flex flex-row justify-between items-center py-5 hidden transition-all duration-300 ease-in-out ${
@@ -59,12 +76,15 @@ const DesktopNavbar = ({ isSticky }: { isSticky: boolean }) => {
             </figure>
           </Link>
           <div className="flex-1 flex justify-center items-center ">
-            <ul className="flex flex-row gap-8  justify-between bg-[#15151514] w-fit px-8 py-4 rounded-full">
+            <ul className="flex flex-row gap-8  justify-between bg-[#15151514]  w-fit px-8 py-4 rounded-full">
               {NAV_LINKS.map((link: { href: string; label: string }) => (
                 <li key={link.label} className="group">
-                  <Link href={link.href} className="relative">
+                  <button
+                    onClick={() => scrollToSection(link.href.replace("#", ""))}
+                    className="relative cursor-pointer text-[#151515] Ï transition-colors duration-300"
+                  >
                     {link.label}
-                  </Link>
+                  </button>
                   <div className="origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 border-b-2 border-[#BDED5B]" />
                 </li>
               ))}
@@ -87,16 +107,22 @@ const DesktopNavbar = ({ isSticky }: { isSticky: boolean }) => {
   );
 };
 
-const MobileNavbar = ({ isSticky }: { isSticky: boolean }) => {
+const MobileNavbar = ({
+  isSticky,
+  scrollToSection,
+}: {
+  isSticky: boolean;
+  scrollToSection: (sectionId: string) => void;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "Work", href: "/work" },
-    { label: "Service", href: "/service" },
-    { label: "Process", href: "/process" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Home", href: "#" },
+    { label: "Work", href: "#work" },
+    { label: "Service", href: "#service" },
+    { label: "Process", href: "#process" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -183,10 +209,17 @@ const MobileNavbar = ({ isSticky }: { isSticky: boolean }) => {
               <div className="self-stretch flex flex-col justify-center items-start gap-4">
                 <div className="flex flex-col justify-center items-start gap-4">
                   {menuItems.map((item, index) => (
-                    <Link
+                    <button
                       key={item.label}
-                      href={item.href}
-                      className={`justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal transition-all duration-500 ease-out hover:text-[#BDED5B] hover:translate-x-2 ${
+                      onClick={() => {
+                        if (item.href === "#") {
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        } else {
+                          scrollToSection(item.href.replace("#", ""));
+                        }
+                        setIsOpen(false);
+                      }}
+                      className={`justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-normal transition-all duration-500 ease-out hover:text-[#BDED5B] hover:translate-x-2 cursor-pointer ${
                         isOpen
                           ? "opacity-100 translate-y-0"
                           : "opacity-0 translate-y-4"
@@ -196,10 +229,9 @@ const MobileNavbar = ({ isSticky }: { isSticky: boolean }) => {
                           ? `${index * 100 + 200}ms`
                           : `${(menuItems.length - index - 1) * 50}ms`,
                       }}
-                      onClick={() => setIsOpen(false)}
                     >
                       {item.label}
-                    </Link>
+                    </button>
                   ))}
                 </div>
               </div>
