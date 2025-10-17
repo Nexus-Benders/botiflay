@@ -114,7 +114,9 @@ function MiddleSection() {
          bg-gradient-to-b from-[#8B8B8B] to-50% to-[#252525] 
          cursor-pointer hover:opacity-90"
         >
-          Book A Call
+          <Link href={"https://cal.com/botiflay-studio/30min"} target="_blank">
+            Book A Call
+          </Link>
         </button>
       </div>
     </div>

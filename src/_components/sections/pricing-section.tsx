@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import SectionHeader from "../headers/section-header";
+import Link from "next/link";
 
 export default function PricingSection() {
   const [pricingModel, setPricingModel] = useState<"one-time" | "subscription">(
@@ -173,7 +174,12 @@ export default function PricingSection() {
               <div className="space-y-3">
                 <Button label="Request Quote" />
                 <button className="w-full text-[#D9D9D9] text-[14px] leading-4 underline font-[500] text-center py-2 ">
-                  Book A Call
+                  <Link
+                    href={"https://cal.com/botiflay-studio/30min"}
+                    target="_blank"
+                  >
+                    Book A Call
+                  </Link>
                 </button>
               </div>
 
@@ -223,7 +229,9 @@ function Button({ label }: { label: string }) {
     transition-all 
     hover:from-[#8b8b8bd5] hover:to-[#252525]"
     >
-      {label}
+      <Link href={"https://cal.com/botiflay-studio/30min"} target="_blank">
+        {label}
+      </Link>
     </button>
   );
 }
@@ -264,7 +272,9 @@ function CardTop({
       <div className="space-y-1 mt-4">
         <Button label={"Get Started Today"} />
         <button className="w-full text-[#434343] text-[14px] leading-4 underline font-[500] text-center py-2 ">
-          Book A Call
+          <Link href={"https://cal.com/botiflay-studio/30min"} target="_blank">
+            Book A Call
+          </Link>
         </button>
       </div>
     </div>
