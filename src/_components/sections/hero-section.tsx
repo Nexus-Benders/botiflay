@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const optData = [
   {
@@ -19,6 +20,27 @@ const logos = [
   { id: 2, src: "/assets/Mindscope.png", alt: "Mindscope" },
   { id: 3, src: "/assets/Mindscope.png", alt: "Mindscope" },
   { id: 4, src: "/assets/Mindscope.png", alt: "Mindscope" },
+];
+
+const portfolioLogos = [
+  {
+    id: 1,
+    src: "/assets/dribble.png",
+    alt: "dribble-logo",
+    link: "https://dribbble.com/botiflay",
+  },
+  {
+    id: 2,
+    src: "/assets/behance.png",
+    alt: "behance-logo",
+    link: "https://www.behance.net/botiflaystudiollc",
+  },
+  {
+    id: 3,
+    src: "/assets/clutch.png",
+    alt: "clutch-logo",
+    link: "https://clutch.co/profile/botiflay-studiover",
+  },
 ];
 
 export default function HeroSection() {
@@ -146,14 +168,20 @@ function Collaboration() {
 
 function Clutch() {
   return (
-    <div className="flex justify-center">
-      <Image
-        src={"/assets/clutch.png"}
-        alt="Clutch"
-        width={300}
-        height={300}
-        className="max-h-[28px] sm:max-h-[32px] w-auto"
-      />
+    <div className="flex justify-center flex-row gap-3">
+      {portfolioLogos.map((logo, idx) => (
+        <Link href={logo.link} key={logo.id} target="_blank">
+          <div className="relative">
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={300}
+              height={300}
+              className={`max-h-[20px] sm:max-h-[24px] w-auto `}
+            />
+          </div>
+        </Link>
+      ))}
     </div>
   );
 }
