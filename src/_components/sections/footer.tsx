@@ -7,27 +7,26 @@ export default function Footer() {
     {
       id: 1,
       label: "Facebook",
-      href: "https://www.facebook.com",
-      icon: "/social/facebook.png",
+      href: "https://www.facebook.com/botiflaystudio/",
+      icon: "/social/Facebook.png",
     },
     {
       id: 2,
       label: "Linkedin",
-      href: "https://www.facebook.com",
-      icon: "/social/linkedin.png",
+      href: "https://www.linkedin.com/company/botiflay-studio/",
+      icon: "/social/LinkedIn.png",
     },
-
     {
       id: 3,
       label: "Youtube",
-      href: "https://www.facebook.com",
-      icon: "/social/youtube.png",
+      href: "https://youtube.com/@botiflaystudio?si=Xg0leZ-g0IATpRHQ",
+      icon: "/social/Youtube.png",
     },
     {
       id: 4,
       label: "Twitter",
-      href: "https://www.facebook.com",
-      icon: "/social/twitter.png",
+      href: "https://x.com/botiflaystudio?t=55WMxSvwGs2FxAAoKNnGlg&s=09",
+      icon: "/social/Twitter.png",
     },
   ];
 
@@ -100,7 +99,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-row gap-2 sm:gap-3 w-full justify-center order-1 sm:order-2">
           {socialLinks.map((link) => (
-            <Link href={link.href} key={link.id}>
+            <Link href={link.href} key={link.id} target="_blank">
               <Image
                 src={link.icon}
                 alt={link.label}
