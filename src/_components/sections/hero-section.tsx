@@ -62,7 +62,7 @@ function MiddleSection() {
             alt="avater-group"
             width={400}
             height={400}
-            className=" h-7 lg:h-12  w-full"
+            className=" h-7 lg:h-8  w-full"
             quality={100}
             priority
           />
@@ -84,7 +84,7 @@ function MiddleSection() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-2 justify-center items-center">
+      <div className="flex flex-col gap- justify-center items-center">
         <h1 className="font-bold text-4xl sm:text-[40px] md:text-[50px] lg:text-[65px] leading-[1.1] uppercase text-center">
           CRAFTING PREMIUM DESIGNS & DEVELOPMENT
         </h1>

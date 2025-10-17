@@ -9,7 +9,7 @@ export default function AboutUs() {
           Ever wonder why some startups shine while others fade? The secret is
           in the design.
         </p>
-        <p className="text-[#9CA0A2] text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-normal">
+        <p className="text-[#9CA0A2] ">
           At BotiFlay, we help founders create innovative digital products that
           boost conversions, retain customers, and attract investors. Ready to
           make your product the next big thing?
@@ -52,28 +52,10 @@ function Slider() {
     "/aboutSlide/Category Page.png",
     "/aboutSlide/Dashboard.png",
     "/aboutSlide/Desktop - 19.png",
-    "/aboutSlide/Frame 1171277815.png",
-    "/aboutSlide/Frame 1261155180.png",
-    "/aboutSlide/Frame 1261155185.png",
-    "/aboutSlide/Frame 27807.png",
-    "/aboutSlide/Group 1321316998.png",
-    "/aboutSlide/Group 1321316999.png",
-    "/aboutSlide/Group 3447.png",
-    "/aboutSlide/Home page.png",
-    "/aboutSlide/iphone 15.png",
-    "/aboutSlide/iphone 16.png",
-    "/aboutSlide/iphone 17.png",
-    "/aboutSlide/iphone 24.png",
-    "/aboutSlide/iphone 30.png",
-    "/aboutSlide/iphone 34.png",
-    "/aboutSlide/property list.png",
-    "/aboutSlide/Property.png",
-    "/aboutSlide/Sign Up.png",
-    "/aboutSlide/Transections Graph.png",
   ];
 
   return (
-    <div className="max-h-[320px] sm:max-h-[420px] md:max-h-[520px] bg-[#FFFFFF] shadow-xl rounded-2xl overflow-hidden py-6 sm:py-8 md:py-12">
+    <div className="max-h-[320px] sm:max-h-[420px] md:max-h-[520px] bg-[#FFFFFF] shadow-xl rounded-2xl overflow-hidden ">
       <div className="flex gap-3 sm:gap-4 md:gap-6 px-3 sm:px-4 md:px-6">
         {[0, 1, 2, 3, 4].map((colIndex) => (
           <div key={colIndex} className="flex-1 overflow-hidden">

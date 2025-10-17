@@ -9,7 +9,7 @@ interface Tool {
 
 const tools: Tool[] = [
   {
-    icon: <Image alt="figma" src={"/tools/figma.png"} width={64} height={64} />,
+    icon: <Image alt="figma" src={"/tools/Figma.png"} width={64} height={64} />,
     title: "Figma",
     description: "UX/UI Design, Wireframing.",
   },

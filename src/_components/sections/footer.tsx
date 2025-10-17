@@ -32,7 +32,7 @@ export default function Footer() {
 
   return (
     <div
-      className={`bg-[url("/assets/footer.png")] bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] lg:min-h-[550px] relative w-full flex justify-center items-center`}
+      className={`bg-[url("/assets/footer.png")] bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] lg:min-h-[550px] 2xl:min-h-[700px] h-full relative w-full flex justify-center items-center`}
     >
       {/* Desktop Content */}
       <div className="lg:flex justify-center items-center h-full hidden">

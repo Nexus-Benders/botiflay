@@ -5,5 +5,5 @@ export default function ContainerWrapper({
 }: {
   children: ReactNode;
 }) {
-  return <div className="container mx-auto max-w-[1440px]">{children}</div>;
+  return <div className="container mx-auto max-w-[1920px]">{children}</div>;
 }
