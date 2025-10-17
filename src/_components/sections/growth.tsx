@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import SectionHeader from "../headers/section-header";
 
 export default function Growth() {
@@ -20,28 +21,55 @@ export default function Growth() {
 }
 
 function Card() {
+  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="flex items-center justify-center pt-6 sm:pt-9">
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
+      <div
+        ref={cardRef}
+        className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0"
+      >
         {/* Growth Card */}
         <div className="bg-[#FFFFFF] rounded-2xl shadow-sm border border-gray-200 p-3">
           <div className="border rounded-2xl border-[#F5F5F6] p-4 sm:p-5 bg-[#FFFFFF]">
             <GradientText text="Growth" />
             <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-2 text-center py-3 sm:py-4">
               <div className="">
-                <div className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope">
-                  80%
-                </div>
+                <AnimatedPercentage
+                  value={80}
+                  isVisible={isVisible}
+                  className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope"
+                />
                 <CardParagraph text="Improved feedback" />
               </div>
               <div className="">
-                <div className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope">
-                  56%
-                </div>
+                <AnimatedPercentage
+                  value={56}
+                  isVisible={isVisible}
+                  className="text-[24px] sm:text-[28px] md:text-[32px] leading-[1.2] font-semibold text-[#0B0B0B] font-manrope"
+                />
                 <CardParagraph text="New projects" />
               </div>
             </div>
-            <CardStats type="Success" value="92%" />
+            <CardStats type="Success" value="92%" isVisible={isVisible} />
           </div>
           <CardDetails
             text={
@@ -61,9 +89,11 @@ function Card() {
             <GradientText text="Conversion Focused" />
 
             <div className="flex flex-col items-center pt-3 sm:pt-4 space-y-3 sm:space-y-4">
-              <div className="font-manrope font-semibold text-[32px] sm:text-[36px] md:text-[40px] leading-[1.2] text-[#0B0B0B] tracking-[-2%]">
-                200%
-              </div>
+              <AnimatedPercentage
+                value={200}
+                isVisible={isVisible}
+                className="font-manrope font-semibold text-[32px] sm:text-[36px] md:text-[40px] leading-[1.2] text-[#0B0B0B] tracking-[-2%]"
+              />
               <div className="w-full h-[2px] absolute top-[75%] bg-[#F5F5F6]" />
 
               <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16">
@@ -87,8 +117,12 @@ function Card() {
             <CardParagraph text="Stats will speak for itself" />
 
             <div className="space-y-2 sm:space-y-3">
-              <CardStats type="User retention" value="80%" />
-              <CardStats type="Leads" value="150%" />
+              <CardStats
+                type="User retention"
+                value="80%"
+                isVisible={isVisible}
+              />
+              <CardStats type="Leads" value="150%" isVisible={isVisible} />
             </div>
           </div>
           <CardDetails
@@ -119,7 +153,17 @@ function CardParagraph({ text }: { text: string }) {
   );
 }
 
-function CardStats({ type, value }: { type: string; value: string }) {
+function CardStats({
+  type,
+  value,
+  isVisible,
+}: {
+  type: string;
+  value: string;
+  isVisible?: boolean;
+}) {
+  const numericValue = parseInt(value.replace("%", ""));
+
   return (
     <div>
       <div className=" grid grid-cols-[40%_30%_10%] items-center justify-between mb-2 flex-row gap-3 p-2 px-4  border border-[#F5F5F6] rounded-full">
@@ -128,13 +172,18 @@ function CardStats({ type, value }: { type: string; value: string }) {
         </span>
         <div className="w-full bg-[#EAF8CB] rounded-full h-2">
           <div
-            className="bg-lime-500 h-2 rounded-full"
-            style={{ width: value === "150%" ? "70%" : value }}
+            className="bg-lime-500 h-2 rounded-full transition-all duration-2000 ease-out"
+            style={{
+              width: isVisible ? (value === "150%" ? "70%" : value) : "0%",
+            }}
           />
         </div>
-        <span className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]">
-          {value}
-        </span>
+        <AnimatedPercentage
+          value={numericValue}
+          isVisible={isVisible || false}
+          className="text-[16px] font-[400] tracking-[-2%] leading-5 text-[#0B0B0B]"
+          suffix="%"
+        />
       </div>
       {/* Progress bar */}
     </div>
@@ -162,6 +211,51 @@ function CardDetails({
       <p className="font-[400] text-lg leading-7 tracking-[-2%] text-[#393939]">
         {text}
       </p>
+    </div>
+  );
+}
+
+function AnimatedPercentage({
+  value,
+  isVisible,
+  className,
+  suffix = "%",
+}: {
+  value: number;
+  isVisible: boolean;
+  className: string;
+  suffix?: string;
+}) {
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (isVisible) {
+      const duration = 2000; // 2 seconds
+      const steps = 60; // 60 steps for smooth animation
+      const increment = value / steps;
+      const stepDuration = duration / steps;
+
+      let currentValue = 0;
+      const timer = setInterval(() => {
+        currentValue += increment;
+        if (currentValue >= value) {
+          setDisplayValue(value);
+          clearInterval(timer);
+        } else {
+          setDisplayValue(Math.floor(currentValue));
+        }
+      }, stepDuration);
+
+      return () => clearInterval(timer);
+    } else {
+      setDisplayValue(0);
+    }
+  }, [isVisible, value]);
+
+  return (
+    <div className={className}>
+      {displayValue}
+      {suffix}
     </div>
   );
 }
