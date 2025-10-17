@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef, useState } from "react";
 import SectionHeader from "../headers/section-header";
 import Image from "next/image";
 
 export default function OurWork() {
+  const [visibleCards, setVisibleCards] = useState<boolean[]>([]);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const cardData = [
     {
       id: 1,
@@ -50,28 +54,54 @@ export default function OurWork() {
     },
   ];
 
+  useEffect(() => {
+    const observers = cardRefs.current.map((ref, index) => {
+      if (!ref) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards(prev => {
+              const newVisible = [...prev];
+              newVisible[index] = true;
+              return newVisible;
+            });
+          }
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, []);
+
   return (
     <div className="py-8 sm:py-10 md:py-12 flex flex-col justify-center items-center text-center">
       <SectionHeader headline={"Our Work"} hasBlackBg />
       <div className="flex flex-col gap-6 sm:gap-8 py-8 sm:py-10 md:py-12 w-full max-w-7xl mx-auto px-4">
         {cardData?.map((item, idx) => (
-          <ProjectCard key={item.id} {...item} isReveresed={idx % 2 === 0} />
+          <ProjectCard 
+            key={item.id} 
+            {...item} 
+            isReveresed={idx % 2 === 0}
+            isVisible={visibleCards[idx] || false}
+            animationDelay={idx * 200}
+            ref={(el) => {
+              cardRefs.current[idx] = el;
+            }}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function ProjectCard({
-  title,
-  description,
-  client,
-  role,
-  clientRating,
-  tags,
-  image,
-  isReveresed,
-}: {
+const ProjectCard = React.forwardRef<HTMLDivElement, {
   title: string;
   description: string;
   client: string;
@@ -80,18 +110,46 @@ function ProjectCard({
   tags: string[];
   image: string;
   isReveresed: boolean;
-}) {
+  isVisible: boolean;
+  animationDelay: number;
+}>(({
+  title,
+  description,
+  client,
+  role,
+  clientRating,
+  tags,
+  image,
+  isReveresed,
+  isVisible,
+  animationDelay,
+}, ref) => {
   return (
-    <div className="bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl overflow-hidden">
+    <div 
+      ref={ref}
+      className={`bg-[#282828] border-[1px] border-[#292929] text-white rounded-2xl overflow-hidden transition-all duration-1000 ease-out ${
+        isVisible 
+          ? 'opacity-100 translate-y-0 scale-100' 
+          : 'opacity-0 translate-y-8 scale-95'
+      }`}
+      style={{
+        transitionDelay: isVisible ? `${animationDelay}ms` : '0ms'
+      }}
+    >
       {/* Mobile Layout */}
       <div className="lg:hidden text-start">
-        <figure className="w-full">
+        <figure className="w-full overflow-hidden">
           <Image
             src={`/work/${image}`}
             alt={title}
             width={1000}
             height={1000}
-            className="w-full h-auto"
+            className={`w-full h-auto transition-transform duration-1000 ease-out ${
+              isVisible ? 'scale-100' : 'scale-105'
+            }`}
+            style={{
+              transitionDelay: isVisible ? `${animationDelay + 200}ms` : '0ms'
+            }}
           />
         </figure>
         <div className="bg-[#2D2D2D] p-6 space-y-6">
@@ -141,12 +199,18 @@ function ProjectCard({
           isReveresed ? "grid-cols-[36%_63%]" : "grid-cols-[63%_36%]"
         } gap-6 p-8`}
       >
-        <figure className={`w-full ${isReveresed ? "order-2" : "order-1"}`}>
+        <figure className={`w-full overflow-hidden ${isReveresed ? "order-2" : "order-1"}`}>
           <Image
             src={`/work/${image}`}
             alt={title}
             width={1000}
             height={1000}
+            className={`w-full h-auto transition-transform duration-1000 ease-out ${
+              isVisible ? 'scale-100' : 'scale-105'
+            }`}
+            style={{
+              transitionDelay: isVisible ? `${animationDelay + 200}ms` : '0ms'
+            }}
           />
         </figure>
         <div
@@ -191,4 +255,6 @@ function ProjectCard({
       </div>
     </div>
   );
-}
+});
+
+ProjectCard.displayName = "ProjectCard";
