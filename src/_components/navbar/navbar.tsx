@@ -98,7 +98,12 @@ const DesktopNavbar = ({
   inline-flex justify-center items-center gap-2.5"
           >
             <div className="text-center justify-start text-zinc-100 text-base font-bold font-['Space_Grotesk'] leading-none">
-              Start Your Project
+              <Link
+                href={"https://cal.com/botiflay-studio/30min"}
+                target="_blank"
+              >
+                Start Your Project
+              </Link>
             </div>
           </div>
         </div>
