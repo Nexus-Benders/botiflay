@@ -60,11 +60,11 @@ body {
   }
 
   .animate-slide-down {
-    animation: slide-down 200s linear infinite;
+    animation: slide-down 600s linear infinite;
   }
 
   .animate-slide-up {
-    animation: slide-up 200s linear infinite;
+    animation: slide-up 600s linear infinite;
   }
 }
 

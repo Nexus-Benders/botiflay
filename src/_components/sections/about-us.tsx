@@ -22,16 +22,54 @@ export default function AboutUs() {
 
 function Slider() {
   const images = [
-    "https://images.pexels.com/photos/1619317/pexels-photo-1619317.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1308624/pexels-photo-1308624.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1670187/pexels-photo-1670187.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1183434/pexels-photo-1183434.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1758531/pexels-photo-1758531.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1118877/pexels-photo-1118877.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=400",
-    "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=400",
+    "/aboutSlide/04 Healthtec UX UI Design.png",
+    "/aboutSlide/04 Issue Tracker App UX UI Design.png",
+    "/aboutSlide/04 Logistic UX UI Design Service.png",
+    "/aboutSlide/04 Sendo Financial App UX UI Design.png",
+    "/aboutSlide/04 Travencio Travel ux ui design.png",
+    "/aboutSlide/04 Uprankly - AI Powered Link building Outreach App.png",
+    "/aboutSlide/05 AI Book Keeper UX UI Design App.png",
+    "/aboutSlide/05 Job Finding APP UX UI Design.png",
+    "/aboutSlide/05 Travencio Travel ux ui design.png",
+    "/aboutSlide/05 Uprankly - AI Powered Link building Outreach App.png",
+    "/aboutSlide/06 Job Finding APP UX UI Design.png",
+    "/aboutSlide/06 Logistic UX UI Design Service.png",
+    "/aboutSlide/06 Travencio Travel ux ui design.png",
+    "/aboutSlide/07 AI Accounting App UX UI Design.png",
+    "/aboutSlide/07 Dbuilder KIT Design.png",
+    "/aboutSlide/07 Issue Tracker App UX UI Design.png",
+    "/aboutSlide/07 Job Finding APP UX UI Design.png",
+    "/aboutSlide/07 Poptics Marketing Tools.png",
+    "/aboutSlide/08 AI Book Keeper UX UI Design App.png",
+    "/aboutSlide/08 Issue Tracker App UX UI Design.png",
+    "/aboutSlide/08 Logistic UX UI Design Service.png",
+    "/aboutSlide/09 AI Accounting App UX UI Design.png",
+    "/aboutSlide/09 Spendo.png",
+    "/aboutSlide/10 Poptics Marketing Tools.png",
+    "/aboutSlide/11 Poptics Marketing Tools.png",
+    "/aboutSlide/12 Healthtec UX UI Design.png",
+    "/aboutSlide/15 Krait AI.png",
+    "/aboutSlide/Category Page.png",
+    "/aboutSlide/Dashboard.png",
+    "/aboutSlide/Desktop - 19.png",
+    "/aboutSlide/Frame 1171277815.png",
+    "/aboutSlide/Frame 1261155180.png",
+    "/aboutSlide/Frame 1261155185.png",
+    "/aboutSlide/Frame 27807.png",
+    "/aboutSlide/Group 1321316998.png",
+    "/aboutSlide/Group 1321316999.png",
+    "/aboutSlide/Group 3447.png",
+    "/aboutSlide/Home page.png",
+    "/aboutSlide/iphone 15.png",
+    "/aboutSlide/iphone 16.png",
+    "/aboutSlide/iphone 17.png",
+    "/aboutSlide/iphone 24.png",
+    "/aboutSlide/iphone 30.png",
+    "/aboutSlide/iphone 34.png",
+    "/aboutSlide/property list.png",
+    "/aboutSlide/Property.png",
+    "/aboutSlide/Sign Up.png",
+    "/aboutSlide/Transections Graph.png",
   ];
 
   return (
@@ -68,7 +106,7 @@ function Slider() {
                       priority
                     />
                   </div>
-                  <div className="bg-[#727171] h-2 sm:h-3 md:h-4 w-full rounded-full" />
+                  <div className="bg-black/10 backdrop-blur-3xl h-2 sm:h-3 md:h-4 w-full rounded-full" />
                 </div>
               ))}
             </div>
