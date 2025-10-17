@@ -44,10 +44,15 @@ export default function Footer() {
           </div>
           <div
             className="px-10 py-4 left-[210px] top-[190px] absolute bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_rgba(255,255,255,0.15),0px_10px_10px_rgba(0,0,0,0.10),0px_4px_4px_rgba(0,0,0,0.05),inset_0px_8px_10px_rgba(246,249,255,0.20)]
- outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3"
+ outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3 hover:brightness-50 duration-300"
           >
             <div className="text-center justify-start text-white text-lg font-bold font-['Space_Grotesk'] leading-none">
-              Start A Project
+              <Link
+                href={"https://cal.com/botiflay-studio/30min"}
+                target="_blank"
+              >
+                Start A Project
+              </Link>
             </div>
           </div>
           <div className="px-2 py-1.5 left-[235px] top-0 absolute bg-white/5 rounded-[30px] shadow-[0px_2px_8px_0px_rgba(0,0,0,0.15)] inset-shadow-[inset_0px_-1px_1.7000000476837158px_0px_rgba(0,0,0,0.17)]  outline-1 outline-offset-[-1px] outline-white/10 inline-flex justify-center items-center gap-1.5">
@@ -99,13 +104,13 @@ export default function Footer() {
         </div>
         <div className="flex flex-row gap-2 sm:gap-3 w-full justify-center order-1 sm:order-2">
           {socialLinks.map((link) => (
-            <Link href={link.href} key={link.id} target="_blank">
+            <Link href={link.href} key={link.id} target="_blank" className="">
               <Image
                 src={link.icon}
                 alt={link.label}
                 width={40}
                 height={40}
-                className="sm:w-14 sm:h-14"
+                className="sm:w-14 sm:h-14 hover:brightness-50 duration-300"
               />
             </Link>
           ))}
