@@ -11,32 +11,59 @@ export default function GallerySlider() {
 }
 
 const Slider = () => {
-  // Mock images from your design (replace with your actual URLs)
-  const slides = [
+  // Gallery images from public/gallery folder
+  const slides1 = [
     {
       id: 1,
-      src: "https://unsplash.it/300/300",
-      alt: "Video Solutions",
+      src: "/gallery/slide1.1.png",
+      alt: "Gallery Slide 1.1",
     },
     {
       id: 2,
-      src: "https://unsplash.it/300/300",
-      alt: "Targeted Ads",
+      src: "/gallery/slide1.2.png",
+      alt: "Gallery Slide 1.2",
     },
     {
       id: 3,
-      src: "https://unsplash.it/300/300",
-      alt: "Legal Advisors",
+      src: "/gallery/slide1.3.png",
+      alt: "Gallery Slide 1.3",
     },
     {
       id: 4,
-      src: "https://unsplash.it/300/300",
-      alt: "Architecture Firm",
+      src: "/gallery/slide1.4.png",
+      alt: "Gallery Slide 1.4",
     },
     {
       id: 5,
-      src: "https://unsplash.it/300/300",
-      alt: "Floyd Miles",
+      src: "/gallery/slide1.5.png",
+      alt: "Gallery Slide 1.5",
+    },
+  ];
+  const slides2 = [
+    {
+      id: 1,
+      src: "/gallery/slide2.1.png",
+      alt: "Gallery Slide 2.1",
+    },
+    {
+      id: 2,
+      src: "/gallery/slide2.2.png",
+      alt: "Gallery Slide 2.2",
+    },
+    {
+      id: 3,
+      src: "/gallery/slide2.3.png",
+      alt: "Gallery Slide 2.3",
+    },
+    {
+      id: 4,
+      src: "/gallery/slide2.4.png",
+      alt: "Gallery Slide 2.4",
+    },
+    {
+      id: 5,
+      src: "/gallery/slide2.5.png",
+      alt: "Gallery Slide 2.5",
     },
   ];
 
@@ -60,7 +87,7 @@ const Slider = () => {
       <div className="slider relative overflow-hidden">
         {/* Top Row */}
         <div className="track pb-4" style={topRowStyle}>
-          {[...slides, ...slides].map((slide, idx) => (
+          {[...slides1, ...slides1].map((slide, idx) => (
             <div
               key={`top-${slide.id}-${idx}`}
               className="flex-shrink-0 mx-2 first:ml-0 last:mr-0"
@@ -78,7 +105,7 @@ const Slider = () => {
 
         {/* Bottom Row */}
         <div className="track" style={bottomRowStyle}>
-          {[...slides, ...slides].map((slide, idx) => (
+          {[...slides2, ...slides2].map((slide, idx) => (
             <div
               key={`bottom-${slide.id}-${idx}`}
               className="flex-shrink-0 mx-2 first:ml-0 last:mr-0"
