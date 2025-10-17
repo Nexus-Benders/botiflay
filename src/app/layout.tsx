@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope, Space_Grotesk, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -12,6 +12,17 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const greatVibes = Great_Vibes({
+  variable: "--font-great-vibes",
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
+  display: "swap",
+  preload: true,
+  fallback: ["serif"],
+  adjustFontFallback: true,
+});
+
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
@@ -22,6 +33,8 @@ export const metadata: Metadata = {
   description: "CRAFTING PREMIUM DESIGNS & DEVELOPMENT",
 };
 
+const fontClasses = `${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} ${greatVibes.variable}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={` ${spaceGrotesk.variable} ${inter.variable} ${manrope.variable} antialiased relative`}
-      >
+      <body className={` ${fontClasses} antialiased relative`}>
         <div className="h-dvh bg-[url('/assets/hero-bg.png')] bg-cover bg-center bg-no-repeat ">
           {children}
         </div>

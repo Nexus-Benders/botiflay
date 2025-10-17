@@ -11,6 +11,7 @@
   --font-space-grotesk: var(--font-space-grotesk);
   --font-inter: var(--font-inter);
   --font-manrope: var(--font-manrope);
+  --font-great-vibes: var(--font-great-vibes);
 }
 
 @media (prefers-color-scheme: light) {

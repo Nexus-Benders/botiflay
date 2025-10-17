@@ -93,7 +93,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="w-full absolute bottom-6 sm:bottom-8 lg:bottom-10 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 lg:gap-16 xl:gap-52 px-4">
+      <div className="w-full absolute bottom-6 sm:bottom-8 lg:bottom-14 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 lg:gap-16 xl:gap-52 px-4">
         <div className="w-full text-center text-xs sm:text-sm text-[#F4F3F3] order-2 sm:order-1">
           &copy; {new Date().getFullYear()} BotiFlay. All rights reserved.
         </div>
@@ -110,6 +110,14 @@ export default function Footer() {
             </Link>
           ))}
         </div>
+      </div>
+      <div className="text-center text-[8px] sm:text-xs text-[#F4F3F3] absolute bottom-2 left-1/2 -translate-x-1/2 font-great-vibes underline underline-offset-2  decoration-2 decoration-lime-500/0 hover:decoration-lime-500/100 transition-all duration-300 ease-in-out">
+        <p>
+          <Link href="https://nafiziqbal.info" target="_blank">
+            Nafiz Iqbal
+          </Link>
+          .
+        </p>
       </div>
     </div>
   );
