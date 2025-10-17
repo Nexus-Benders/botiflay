@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import SectionHeader from "../headers/section-header";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactUs() {
   const [option, setOption] = useState<"book-a-call" | "request-quote">(
@@ -49,12 +50,14 @@ export default function ContactUs() {
           </button>
         </div>
         <figure className="max-w-[1080px] w-full lg:min-h-[480px] min-h-[200px] xl:min-h-[580px] h-full relative">
-          <Image
-            src={"/assets/calender.png"}
-            alt="calender"
-            layout="fill"
-            className="object-contain"
-          />
+          <Link href={"https://cal.com/botiflay-studio/30min"} target="_blank">
+            <Image
+              src={"/assets/calender.png"}
+              alt="calender"
+              layout="fill"
+              className="object-contain"
+            />
+          </Link>
         </figure>
       </div>
     </div>
