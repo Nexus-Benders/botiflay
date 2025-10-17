@@ -90,22 +90,19 @@ const DesktopNavbar = ({
               ))}
             </ul>
           </div>
-          <div
-            data-property-1="Variant3"
-            className="px-8 py-3.5 bg-gradient-to-t from-emerald-950 to-stone-950 rounded-[30px]
+          <Link href={"https://cal.com/botiflay-studio/30min"} target="_blank">
+            <div
+              data-property-1="Variant3"
+              className="px-8 py-3.5 bg-gradient-to-t from-emerald-950 to-stone-950 rounded-[30px]
   shadow-[0px_2px_8px_rgba(0,0,0,0.15),inset_0px_1px_3.9px_rgba(255,255,255,0.25),inset_0px_4px_3.2px_rgba(255,255,255,0.25)]
    outline-1 outline-offset-[-1px] outline-zinc-700
   inline-flex justify-center items-center gap-2.5"
-          >
-            <div className="text-center justify-start text-zinc-100 text-base font-bold font-['Space_Grotesk'] leading-none">
-              <Link
-                href={"https://cal.com/botiflay-studio/30min"}
-                target="_blank"
-              >
+            >
+              <div className="text-center justify-start text-zinc-100 text-base font-bold font-['Space_Grotesk'] leading-none">
                 Start Your Project
-              </Link>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </Container>
     </div>
@@ -258,7 +255,12 @@ const MobileNavbar = ({
                 }}
               >
                 <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
-                  Start A Project
+                  <Link
+                    href={"https://cal.com/botiflay-studio/30min"}
+                    target="_blank"
+                  >
+                    Start A Project
+                  </Link>
                 </div>
               </div>
             </div>

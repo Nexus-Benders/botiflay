@@ -88,10 +88,15 @@ export default function Footer() {
           </div>
           <div
             className="px-6 py-3 bg-gradient-to-b cursor-pointer from-zinc-700/0 to-gray-400/60 rounded-[100px] shadow-[0px_10px_40px_rgba(255,255,255,0.15),0px_10px_10px_rgba(0,0,0,0.10),0px_4px_4px_rgba(0,0,0,0.05),inset_0px_8px_10px_rgba(246,249,255,0.20)]
- outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3"
+ outline-1 outline-offset-[-1px] outline-lime-500/0 backdrop-blur-[10px] inline-flex justify-center items-center gap-3 hover:brightness-50 duration-300"
           >
             <div className="text-center justify-start text-white text-base font-bold font-['Space_Grotesk'] leading-none">
-              Start A Project
+              <Link
+                href={"https://cal.com/botiflay-studio/30min"}
+                target="_blank"
+              >
+                Start A Project
+              </Link>
             </div>
           </div>
         </div>
